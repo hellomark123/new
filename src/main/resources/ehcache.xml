@@ -1,0 +1,11 @@
+<ehcache>
+
+    <cache name="menu"
+           maxElementsInMemory="2000"
+           eternal="false"
+           timeToIdleSeconds="18000"
+           timeToLiveSeconds="36000"
+           overflowToDisk="false"
+    />
+
+</ehcache>

@@ -1,0 +1,36 @@
+###################  项目启动端口  ###################
+server:
+  port: 8080
+
+spring:
+#################### mysql配置  ########################
+  datasource:
+    url: jdbc:mysql://localhost:3306/zhua?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
+    username: ubuntu
+    password: 123
+    filters: log4j,wall,mergeStat
+
+#################### mongodb配置  ########################
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/demo
+
+
+mark:
+  seo:
+  ###################  泛目录规则 ##########################
+    url: /a*/*
+    ############  数据库添加数据url，需要遵循泛目录URL规则  ########
+    deurl: /aa/
+  ###################  判断用户referer ##########################
+    referer[baidu]: .baidu.com
+    referer[sogou]: .sougou.com
+    referer[360]: null
+    referer[bing]:
+  ###################  每日自动生成数据条数 ##########################
+    timer: 20
+  ###################  网站域名，前台URL需要 ##########################
+    domain: http://www.baidu.com/
+  ###################  返回前台链接数,默认40条 ##########################
+    urlCount: 40
+    key: f8386baa45a188fae93211b122072412
