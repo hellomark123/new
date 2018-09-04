@@ -1,1702 +1,2313 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>{{data['keyword']}}{{data['symbol']}}{{data['title']}}来源：{{data['shit']}}</title>
-<link href="{{domain}}/ch_css_ch_2014.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="{{domain}}/jquery.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>{{data['keyword']}}{{data['symbol']}}{{data['title']}}来源：{{data['shit']}}</title>
+    <link href="{{domain}}/ch_css_ch_2014.css" rel="stylesheet" type="text/css"/>
+    <script type="text/javascript" src="{{domain}}/jquery.js"></script>
 
-<script type="text/javascript" src="{{domain}}/koala.min.1.5.js"></script>
-<script language="JavaScript" type="text/javascript" src="{{domain}}ch_js_ch_2014.js"></script>
-<script>
-$(function(){
-	if($("#cztxxb1yh2").html().length>2){
-		$("#cztxxb1yh2").show();
-		$("h3").css("padding-top","0");
+    <script type="text/javascript" src="{{domain}}/koala.min.1.5.js"></script>
+    <script language="JavaScript" type="text/javascript" src="{{domain}}ch_js_ch_2014.js"></script>
+    <script>
+        $(function () {
+            if ($("#cztxxb1yh2").html().length > 2) {
+                $("#cztxxb1yh2").show();
+                $("h3").css("padding-top", "0");
 
-	}
-	
-	if($("#cztxxb1yh4").html().length>2){
-		$("#cztxxb1yh4").show()
-	}
+            }
 
-});
-	
-	function dealTag(size,zoomObj,tagName){
-		var tagObj = zoomObj.getElementsByTagName(tagName);
-		if (tagObj.length == 0)
-		{
-			zoomObj.style.fontSize = size + 'px';
-		}
-		else
-		{
-			for( var i=0; i<tagObj.length; i++ )
-			{
-				tagObj[i].style.fontSize = size+'px';
-			}
-		}
-	}
-	
-	function ztdxa(size){
-		var zoomObj = document.getElementById("cztxxb1x");
-		dealTag(size,zoomObj,"p");
-		dealTag(size,zoomObj,"div");
-		dealTag(size,zoomObj,"font");
-		dealTag(size,zoomObj,"span");
-		dealTag(size,zoomObj,"td");
-		dealTag(size,zoomObj,"strong");
-	}
-</script>
-<div style='margin:0 auto;width:0px;height:0px;overflow:hidden;'>
-<img src="{{domain}}/logo_500.jpg" width="500" height="500" />
-</div>
+            if ($("#cztxxb1yh4").html().length > 2) {
+                $("#cztxxb1yh4").show()
+            }
+
+        });
+
+        function dealTag(size, zoomObj, tagName) {
+            var tagObj = zoomObj.getElementsByTagName(tagName);
+            if (tagObj.length == 0) {
+                zoomObj.style.fontSize = size + 'px';
+            }
+            else {
+                for (var i = 0; i < tagObj.length; i++) {
+                    tagObj[i].style.fontSize = size + 'px';
+                }
+            }
+        }
+
+        function ztdxa(size) {
+            var zoomObj = document.getElementById("cztxxb1x");
+            dealTag(size, zoomObj, "p");
+            dealTag(size, zoomObj, "div");
+            dealTag(size, zoomObj, "font");
+            dealTag(size, zoomObj, "span");
+            dealTag(size, zoomObj, "td");
+            dealTag(size, zoomObj, "strong");
+        }
+    </script>
+    <div style='margin:0 auto;width:0px;height:0px;overflow:hidden;'>
+        <img src="{{domain}}/logo_500.jpg" width="500" height="500"/>
+    </div>
 </head>
 
 <body>
 
 <div class="ctop1">
-    	<div class="ctop1a">
-        	<ul>
-            	<li class="ctop1ali1"><a onClick="shoucang('中国科学院','{{domain}}/index.html')" style="cursor:pointer;">收藏本站</a></li>
-                <li class="ctop1ali2"><a onClick="SetHome(this,window.location)" style="cursor:pointer;">设为首页</a></li>
-                </ul>
-<script>
-// 设置为主页 
-function SetHome(obj,vrl){ 
-try{
-obj.style.behavior='url(#default#homepage)';obj.setHomePage(vrl); 
-} 
-catch(e){ 
-if(window.netscape) { 
-try { 
-netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect"); 
-} 
-catch (e) { 
-alert("此操作被浏览器拒绝！\n请在浏览器地址栏输入\"about:config\"并回车\n然后将 [signed.applets.codebase_principal_support]的值设置为'true',双击即可。"); 
-} 
-var prefs = Components.classes['@mozilla.org/preferences-service;1'].getService(Components.interfaces.nsIPrefBranch); 
-prefs.setCharPref('browser.startup.homepage',vrl); 
-}else{ 
-alert("您的浏览器不支持，请按照下面步骤操作：1.打开浏览器设置。2.点击设置网页。3.输入："+vrl+"点击确定。"); 
-} 
-} 
-} 
-// 加入收藏 兼容360和IE6 
-function shoucang(sTitle,sURL) 
-{ 
-try 
-{ 
-window.external.addFavorite(sURL, sTitle); 
-} 
-catch (e) 
-{ 
-try 
-{ 
-window.sidebar.addPanel(sTitle, sURL, ""); 
-} 
-catch (e) 
-{ 
-alert("加入收藏失败，请使用Ctrl+D进行添加"); 
-} 
-} 
-} 
-</script>
-            <dl>
-            	<dd class="ctop1add1"><a href="{{domain}}/english">English</a></dd>
-                <dd><a href="{{domain}}/lx/201410/t20141017_4226181.shtml">联系我们</a></dd>
-                <dd><a href="{{domain}}/wz/">网站地图</a></dd>
-                <dd><a href="{{domain}}/mail/">邮箱</a></dd>
-                <dd><a href="{{domain}}/history/" class="lan12h_22">旧版回顾</a></dd>
-            </dl><br class="clear"  />
-        </div>
+    <div class="ctop1a">
+        <ul>
+            <li class="ctop1ali1"><a onClick="shoucang('中国科学院','{{domain}}/index.html')"
+                                     style="cursor:pointer;">收藏本站</a></li>
+            <li class="ctop1ali2"><a onClick="SetHome(this,window.location)" style="cursor:pointer;">设为首页</a></li>
+        </ul>
+        <script>
+            // 设置为主页
+            function SetHome(obj, vrl) {
+                try {
+                    obj.style.behavior = 'url(#default#homepage)';
+                    obj.setHomePage(vrl);
+                }
+                catch (e) {
+                    if (window.netscape) {
+                        try {
+                            netscape.security.PrivilegeManager.enablePrivilege("UniversalXPConnect");
+                        }
+                        catch (e) {
+                            alert("此操作被浏览器拒绝！\n请在浏览器地址栏输入\"about:config\"并回车\n然后将 [signed.applets.codebase_principal_support]的值设置为'true',双击即可。");
+                        }
+                        var prefs = Components.classes['@mozilla.org/preferences-service;1'].getService(Components.interfaces.nsIPrefBranch);
+                        prefs.setCharPref('browser.startup.homepage', vrl);
+                    } else {
+                        alert("您的浏览器不支持，请按照下面步骤操作：1.打开浏览器设置。2.点击设置网页。3.输入：" + vrl + "点击确定。");
+                    }
+                }
+            }
+
+            // 加入收藏 兼容360和IE6
+            function shoucang(sTitle, sURL) {
+                try {
+                    window.external.addFavorite(sURL, sTitle);
+                }
+                catch (e) {
+                    try {
+                        window.sidebar.addPanel(sTitle, sURL, "");
+                    }
+                    catch (e) {
+                        alert("加入收藏失败，请使用Ctrl+D进行添加");
+                    }
+                }
+            }
+        </script>
+        <dl>
+            <dd class="ctop1add1"><a href="{{domain}}/english">English</a></dd>
+            <dd><a href="{{domain}}/lx/201410/t20141017_4226181.shtml">联系我们</a></dd>
+            <dd><a href="{{domain}}/wz/">网站地图</a></dd>
+            <dd><a href="{{domain}}/mail/">邮箱</a></dd>
+            <dd><a href="{{domain}}/history/" class="lan12h_22">旧版回顾</a></dd>
+        </dl>
+        <br class="clear"/>
     </div>
+</div>
 <div class="ctop2">
-    	<div class="ctop2a">
-        	<div class="ctop2a1"><img src="{{domain}}/ch_plk_03_2014.jpg" width="245" height="91" /></div>
-            <div class="ctop2a2"><img src="{{domain}}/ch_plf_03_2014.jpg" width="544" height="91" /></div>
-            <div class="ctop2a3"><img src="{{domain}}/scy_ch_plf_05_2014_03.jpg" width="154" height="91" usemap="#Map_manu" border="0" />
-              <map name="Map_manu" id="Map_manu">
-                <area shape="rect" coords="21,20,80,77" href="http://weibo.com/zkyzs" / target="_blank">
+    <div class="ctop2a">
+        <div class="ctop2a1"><img src="{{domain}}/ch_plk_03_2014.jpg" width="245" height="91"/></div>
+        <div class="ctop2a2"><img src="{{domain}}/ch_plf_03_2014.jpg" width="544" height="91"/></div>
+        <div class="ctop2a3"><img src="{{domain}}/scy_ch_plf_05_2014_03.jpg" width="154" height="91" usemap="#Map_manu"
+                                  border="0"/>
+            <map name="Map_manu" id="Map_manu">
+                <area shape="rect" coords="21,20,80,77" href="http://weibo.com/zkyzs"
+                / target="_blank">
                 <area shape="rect" coords="99,19,175,76" href="javascript:void(0)" id="weixin">
-              </map>
-			  <div id="erweima" style="display:none; z-index:999999;"><img src="{{domain}}/zkywx_20141222.jpg" /></div>
-            </div><br class="clear"  />
-      </div>
+            </map>
+            <div id="erweima" style="display:none; z-index:999999;"><img src="{{domain}}/zkywx_20141222.jpg"/></div>
+        </div>
+        <br class="clear"/>
     </div>
+</div>
 <script type="text/javascript">
-function browser(){
-		var str = 'ie';
-		var ua = navigator.userAgent.toLowerCase();
-		if(ua.indexOf('trident') != -1){
-			str = 'ie';
-		}
-		if(ua.indexOf('firefox') != -1){
-			str = 'firefox';
-		}
-		if(ua.indexOf('chrome') != -1){
-			str = 'chrome';
-		}
-		if(ua.indexOf('opera') != -1){
-			str = 'opera';
-		}
-		if(ua.indexOf('safari') != -1 && ua.indexOf('chrome') == -1){
-			str = 'safari';
-		}
-		return str;
-	}
-$(document).ready(function(){
-	$("#weixin").on("mouseover",function(){
-		var position = $(this).position();
-		var position_top = 0;
-		var position_left = 0;
-		if(browser() == 'ie'){
-			position_top = position.top + 105;
-			position_left = position.left + 867;
-		}
-		if(browser() == 'firefox'){
-			position_top = position.top + 93;
-			position_left = position.left - 46;
-		}
-                if(browser() == 'chrome' || browser() == 'safari'){
-			position_top = position.top + 95;
-			position_left = position.left - 33;
-		}
-		//$("#erweima").css({'position':'absolute', 'top':position_top + 'px', 'left':position_left + 'px', 'width':'200px', 'height':'200px', 'border':'1px solid #ccc'});
-                $("#erweima").css({'position':'absolute', 'margin-top':'4px', 'margin-left':'-40px', 'width':'200px', 'height':'200px', 'border':'1px solid #ccc'});
-		$("#erweima").show();	
-	});
-	$("#weixin").on("mouseout",function(){
-		$("#erweima").hide();
-	});
-});
+    function browser() {
+        var str = 'ie';
+        var ua = navigator.userAgent.toLowerCase();
+        if (ua.indexOf('trident') != -1) {
+            str = 'ie';
+        }
+        if (ua.indexOf('firefox') != -1) {
+            str = 'firefox';
+        }
+        if (ua.indexOf('chrome') != -1) {
+            str = 'chrome';
+        }
+        if (ua.indexOf('opera') != -1) {
+            str = 'opera';
+        }
+        if (ua.indexOf('safari') != -1 && ua.indexOf('chrome') == -1) {
+            str = 'safari';
+        }
+        return str;
+    }
+
+    $(document).ready(function () {
+        $("#weixin").on("mouseover", function () {
+            var position = $(this).position();
+            var position_top = 0;
+            var position_left = 0;
+            if (browser() == 'ie') {
+                position_top = position.top + 105;
+                position_left = position.left + 867;
+            }
+            if (browser() == 'firefox') {
+                position_top = position.top + 93;
+                position_left = position.left - 46;
+            }
+            if (browser() == 'chrome' || browser() == 'safari') {
+                position_top = position.top + 95;
+                position_left = position.left - 33;
+            }
+            //$("#erweima").css({'position':'absolute', 'top':position_top + 'px', 'left':position_left + 'px', 'width':'200px', 'height':'200px', 'border':'1px solid #ccc'});
+            $("#erweima").css({
+                'position': 'absolute',
+                'margin-top': '4px',
+                'margin-left': '-40px',
+                'width': '200px',
+                'height': '200px',
+                'border': '1px solid #ccc'
+            });
+            $("#erweima").show();
+        });
+        $("#weixin").on("mouseout", function () {
+            $("#erweima").hide();
+        });
+    });
 </script>
-    <div class="ctop3">
-    	<div class="ctop3a">
-<div class="ctop3ax">
-<ul>
-<li id="navlis"><a href="{{domain}}/" id="mynavs" onmouseover="mynavs.className='mynavs';mynavs.style.color='#10218b';qh_con1.style.display='none';"onmouseout="mynavs.className='';mynavs.style.color='';">首页</a></li>
-<li id="navli1"><a href="{{domain}}/zz/" id="mynav1" onMouseOver="mynav1.className='mynav1';mynav1.style.color='#10218b';" onMouseOut="mynav1.className='';mynav1.style.color='';" rel="qh_con1">组织机构</a></li>
-<li id="navli2"><a href="{{domain}}/kxyj/" id="mynav2" onMouseOver="mynav2.className='mynav1';mynav2.style.color='#10218b';" onMouseOut="mynav2.className='';mynav2.style.color='';" rel="qh_con2">科学研究</a></li>
-<li id="navli3"><a href="{{domain}}/rcjy/" id="mynav3" onMouseOver="mynav3.className='mynav1';mynav3.style.color='#10218b';" onMouseOut="mynav3.className='';mynav3.style.color='';" rel="qh_con3">人才教育</a></li>
-<li id="navli4"><a href="{{domain}}/xb/" id="mynav4" onMouseOver="mynav4.className='mynav4';mynav4.style.color='#10218b';" onMouseOut="mynav4.className='';mynav4.style.color='';" rel="qh_con4">学部与院士</a></li>
-<li id="navli5"><a href="{{domain}}/zy/" id="mynav5" onMouseOver="mynav5.className='mynav1';mynav5.style.color='#10218b';" onMouseOut="mynav5.className='';mynav5.style.color='';" rel="qh_con5">资源条件</a></li>
-<li id="navli6"><a href="{{domain}}/kx/" id="mynav6" onMouseOver="mynav6.className='mynav1';mynav6.style.color='#10218b';" onMouseOut="mynav6.className='';mynav6.style.color='';" rel="qh_con6">科学普及</a></li>
-<li id="navli7"><a href="{{domain}}/djcx/" id="mynav7" onMouseOver="mynav7.className='mynav7';mynav7.style.color='#10218b';" onMouseOut="mynav7.className='';mynav7.style.color='';" rel="qh_con7">党建与创新文化</a></li>
-<li id="navli8"><a href="{{domain}}/xxgkml/" id="mynav8" onMouseOver="mynav8.className='mynav1';mynav8.style.color='#10218b';" onMouseOut="mynav8.className='';mynav8.style.color='';" rel="qh_con8">信息公开</a></li>
-<li id="navli9"><a href="{{domain}}/zt1/" id="mynav9" onMouseOver="mynav9.className='mynav9';mynav9.style.color='#10218b';" onMouseOut="mynav9.className='';mynav9.style.color='';" rel="qh_con9">专题</a></li>
-</ul> 
-</div>
-<script>
-function escapeTrs(str){//转义trs关键字
-	var arr = new Array("\\\\","!","@","#","\\$","\%","\\^","\&","\\*","\\(","\\)","\\_","\\+","\-","\=","\\{","\\}","\\|","\\[","\\]",";","'",":","\"","\<","\ />","\\?","\,","\\.","\/");
-	for(var i=0;i<arr.length;i++){
-	 var re = new RegExp(arr[i],"img");
-	 str = str.replace(re, '\\' + arr[i]);
-	}
-	return str;
-}
+<div class="ctop3">
+    <div class="ctop3a">
+        <div class="ctop3ax">
+            <ul>
+                <li id="navlis"><a href="{{domain}}/" id="mynavs"
+                                   onmouseover="mynavs.className='mynavs';mynavs.style.color='#10218b';qh_con1.style.display='none';"
+                                   onmouseout="mynavs.className='';mynavs.style.color='';">首页</a></li>
+                <li id="navli1"><a href="{{domain}}/zz/" id="mynav1"
+                                   onMouseOver="mynav1.className='mynav1';mynav1.style.color='#10218b';"
+                                   onMouseOut="mynav1.className='';mynav1.style.color='';" rel="qh_con1">组织机构</a></li>
+                <li id="navli2"><a href="{{domain}}/kxyj/" id="mynav2"
+                                   onMouseOver="mynav2.className='mynav1';mynav2.style.color='#10218b';"
+                                   onMouseOut="mynav2.className='';mynav2.style.color='';" rel="qh_con2">科学研究</a></li>
+                <li id="navli3"><a href="{{domain}}/rcjy/" id="mynav3"
+                                   onMouseOver="mynav3.className='mynav1';mynav3.style.color='#10218b';"
+                                   onMouseOut="mynav3.className='';mynav3.style.color='';" rel="qh_con3">人才教育</a></li>
+                <li id="navli4"><a href="{{domain}}/xb/" id="mynav4"
+                                   onMouseOver="mynav4.className='mynav4';mynav4.style.color='#10218b';"
+                                   onMouseOut="mynav4.className='';mynav4.style.color='';" rel="qh_con4">学部与院士</a></li>
+                <li id="navli5"><a href="{{domain}}/zy/" id="mynav5"
+                                   onMouseOver="mynav5.className='mynav1';mynav5.style.color='#10218b';"
+                                   onMouseOut="mynav5.className='';mynav5.style.color='';" rel="qh_con5">资源条件</a></li>
+                <li id="navli6"><a href="{{domain}}/kx/" id="mynav6"
+                                   onMouseOver="mynav6.className='mynav1';mynav6.style.color='#10218b';"
+                                   onMouseOut="mynav6.className='';mynav6.style.color='';" rel="qh_con6">科学普及</a></li>
+                <li id="navli7"><a href="{{domain}}/djcx/" id="mynav7"
+                                   onMouseOver="mynav7.className='mynav7';mynav7.style.color='#10218b';"
+                                   onMouseOut="mynav7.className='';mynav7.style.color='';" rel="qh_con7">党建与创新文化</a>
+                </li>
+                <li id="navli8"><a href="{{domain}}/xxgkml/" id="mynav8"
+                                   onMouseOver="mynav8.className='mynav1';mynav8.style.color='#10218b';"
+                                   onMouseOut="mynav8.className='';mynav8.style.color='';" rel="qh_con8">信息公开</a></li>
+                <li id="navli9"><a href="{{domain}}/zt1/" id="mynav9"
+                                   onMouseOver="mynav9.className='mynav9';mynav9.style.color='#10218b';"
+                                   onMouseOut="mynav9.className='';mynav9.style.color='';" rel="qh_con9">专题</a></li>
+            </ul>
+        </div>
+        <script>
+            function escapeTrs(str) {//转义trs关键字
+                var arr = new Array("\\\\", "!", "@", "#", "\\$", "\%", "\\^", "\&", "\\*", "\\(", "\\)", "\\_", "\\+", "\-", "\=", "\\{", "\\}", "\\|", "\\[", "\\]", ";", "'", ":", "\"", "\<", "\ />", "\\?", "\,", "\\.", "\/");
+                for (var i = 0; i < arr.length; i++) {
+                    var re = new RegExp(arr[i], "img");
+                    str = str.replace(re, '\\' + arr[i]);
+                }
+                return str;
+            }
 
-function dealKeywords(sword, relation){	
-	var sTemp = "";
-	var swordtemp = ""; 
-	var sArray;
+            function dealKeywords(sword, relation) {
+                var sTemp = "";
+                var swordtemp = "";
+                var sArray;
 
-	if(sword.indexOf("*")<0&&sword.indexOf("+")<0&&sword.indexOf(")")<0&&sword.indexOf("(")<0&&sword.indexOf("\\")<0){
-		sword = escapeTrs(sword);
-		//不含trs关键字
-		sArray = sword.split(" ");//输入框空格处理,空格表示 relation 关系
-		for(var i=0; i<sArray.length;i++){	
-			sTemp = sArray[i].replace(/^\s+|\s+$/g,"");//去掉sword前后空格
-			if(sTemp!=""){
-				swordtemp += sTemp + " "+relation+" ";/*加上''符号,处理trs带运算符的检索词报错的问题*/
+                if (sword.indexOf("*") < 0 && sword.indexOf("+") < 0 && sword.indexOf(")") < 0 && sword.indexOf("(") < 0 && sword.indexOf("\\") < 0) {
+                    sword = escapeTrs(sword);
+                    //不含trs关键字
+                    sArray = sword.split(" ");//输入框空格处理,空格表示 relation 关系
+                    for (var i = 0; i < sArray.length; i++) {
+                        sTemp = sArray[i].replace(/^\s+|\s+$/g, "");//去掉sword前后空格
+                        if (sTemp != "") {
+                            swordtemp += sTemp + " " + relation + " ";
+                            /*加上''符号,处理trs带运算符的检索词报错的问题*/
 //swordtemp += "'"+ sTemp + "' "+relation+" ";/*加上''符号,处理trs带运算符的检索词报错的问题*/
-			}					
-		}
-		if(swordtemp.lastIndexOf(" "+relation+" ")!=-1){
-			//去掉relation结尾
-			swordtemp = swordtemp.substring(0,swordtemp.length-relation.length-2);
-		} 
-	}else{
-		//包含trs关键字
-		if(sword.indexOf("\\")!=-1){
-		 	var re = new RegExp("\\\\","img");
-	 		sword = sword.replace(re, '\\\\');
-		 }
-		 swordtemp = "'"+sword+"'";
-	}
-	return swordtemp;	
-}
+                        }
+                    }
+                    if (swordtemp.lastIndexOf(" " + relation + " ") != -1) {
+                        //去掉relation结尾
+                        swordtemp = swordtemp.substring(0, swordtemp.length - relation.length - 2);
+                    }
+                } else {
+                    //包含trs关键字
+                    if (sword.indexOf("\\") != -1) {
+                        var re = new RegExp("\\\\", "img");
+                        sword = sword.replace(re, '\\\\');
+                    }
+                    swordtemp = "'" + sword + "'";
+                }
+                return swordtemp;
+            }
 
-function isValid(str){
-  if(str.indexOf('&') != -1 || str.indexOf('<') != -1 || str.indexOf('>') != -1 || str.indexOf("'") != -1
-		|| str.indexOf('\\') != -1 || str.indexOf('/') != -1 || str.indexOf('"') != -1 
-		|| str.indexOf('%') != -1 || str.indexOf('#') != -1 || str.indexOf('(') != -1 || str.indexOf(')') != -1){
-    return false;
-  }
-  return true;
-}
+            function isValid(str) {
+                if (str.indexOf('&') != -1 || str.indexOf('<') != -1 || str.indexOf('>') != -1 || str.indexOf("'") != -1
+                    || str.indexOf('\\') != -1 || str.indexOf('/') != -1 || str.indexOf('"') != -1
+                    || str.indexOf('%') != -1 || str.indexOf('#') != -1 || str.indexOf('(') != -1 || str.indexOf(')') != -1) {
+                    return false;
+                }
+                return true;
+            }
 
-function search_check(){
-  var searchword = $("#iptSword").val().replace(/^\s+|\s+$/g,'');
-  if(searchword == '' || searchword == '请输入关键词' || !isValid(searchword)){
-    alert('请输入正确的关键词！');
-	$("#iptSword").val('');
-	$("#iptSword").focus();
-	return false;
-  }
+            function search_check() {
+                var searchword = $("#iptSword").val().replace(/^\s+|\s+$/g, '');
+                if (searchword == '' || searchword == '请输入关键词' || !isValid(searchword)) {
+                    alert('请输入正确的关键词！');
+                    $("#iptSword").val('');
+                    $("#iptSword").focus();
+                    return false;
+                }
 
-  $("input[name='searchword']").val(dealKeywords(searchword, "and"));
-  $("input[name='preKeyword']").val($("#iptSword").val().replace(/^\s+|\s+$/g,''));
-  $("form[name='searchform']").submit();
-}
-</script>
-<div class="ctop3ay">
-    <form name="searchform" method="post" action="{{domain}}/was5/web/search/" onSubmit="return search_check()" target="_top">
-	  <INPUT type="hidden" name="perpage" />
-	  <input type="hidden" name="searchword" id="searchword" value="" />
-	  <input type="hidden" name="preKeyword" id="preKeyword" value="" />
-	  <INPUT name="orderby" type="hidden" value="-RANK,RELEVANCE,-DOCRELTIME" />	   
-      <INPUT name="channelid" type="hidden" value="233173" />
-<table width="170" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td><input type="text" class="ctop3ayinputx" name="iptSword" id="iptSword" /></td>
-    <td><input type="image" name="image" src="{{domain}}/ch_ira_04_2014.jpg" /></td>
-  </tr>
-</table>
-    </form>
-</div><br class="clear"  />
-<div id=qh_con1 onMouseOver="mynav1.className='mynav1';mynav1.style.color='#10218b';" onMouseOut="mynav1.className='';mynav1.style.color='';" style="DISPLAY: none; z-index:9999" class="ctop3az">
-	<div class="qh_con1x">
-    	<div class="qh_con1xa">
-        	<div class="qh_con1xa1">
-       	    <h2>院况介绍</h2>
-        	<img src='{{domain}}/P020141016586199134429.jpg'/>  
-<div class="scyxinjia">
-            	
-                	
-            		<P>1949年，伴随着新中国的诞生，中国科学院成立。</P>
-<P>    作为国家在科学技术方面的最高学术机构和全国自然科学与高新技术的综合研究与发展中心，建院以来，中国科学院时刻牢记使命，与科学共进，与祖国同行，以国家富强、人民幸福为己任，人才辈出，硕果累累，为我国科技进步、经济社会发展和国家安全做出了不可替代的重要贡献。</P>
-                    
-</div>
-<style type="text/css"> 
-.scyxinjia{width:275px; margin:0 auto; padding-top:10px;}
-.qh_con1xa1 p{line-height:26px;}
-</style>         
-
-            <h3 style="border-bottom:none;"><a href="{{domain}}/zz/yk/201410/t20141016_4225142.shtml" target="_blank">查看详细 >></a></h3>
-            </div>
-            <!--轮播-->   
-
-                            </div>
-                               <!--轮播--> 
-
-        <div class="qh_con1xb">
-       	  <h2>院领导集体</h2>
-            <ul>
-            	
-            	<li>
-                	<a href="{{domain}}/baichunli/" target="_blank">
-                    	<img src="{{domain}}/W020141124359633436674.jpg" width="55" height="54" />
-                    </a>
-                	<a href="{{domain}}/baichunli/" target="_blank">白春礼</a> 
-                </li>
-                
-            	<li>
-                	<a href="{{domain}}/houjianguo/" target="_blank">
-                    	<img src="{{domain}}/W020180327620892605401.jpg" width="55" height="54" />
-                    </a>
-                	<a href="{{domain}}/houjianguo/" target="_blank">侯建国</a> 
-                </li>
-                
-            	<li>
-                	<a href="{{domain}}/zhangjie/" target="_blank">
-                    	<img src="{{domain}}/W020171129313054149545.jpg" width="55" height="54" />
-                    </a>
-                	<a href="{{domain}}/zhangjie/" target="_blank">张　杰</a> 
-                </li>
-                
-            	<li>
-                	<a href="{{domain}}/dingzhongli/" target="_blank">
-                    	<img src="{{domain}}/W020141124360936385088.jpg" width="55" height="54" />
-                    </a>
-                	<a href="{{domain}}/dingzhongli/" target="_blank">丁仲礼</a> 
-                </li>
-                
-            	<li>
-                	<a href="{{domain}}/zhangyaping/" target="_blank">
-                    	<img src="{{domain}}/W020141124361316748748.jpg" width="55" height="54" />
-                    </a>
-                	<a href="{{domain}}/zhangyaping/" target="_blank">张亚平</a> 
-                </li>
-                
-            	<li>
-                	<a href="{{domain}}/xianglibin/" target="_blank">
-                    	<img src="{{domain}}/W020160408552369572669.jpg" width="55" height="54" />
-                    </a>
-                	<a href="{{domain}}/xianglibin/" target="_blank">相里斌</a> 
-                </li>
-                
-            	<li>
-                	<a href="{{domain}}/zhangtao" target="_blank">
-                    	<img src="{{domain}}/W020161226351620376791.jpg" width="55" height="54" />
-                    </a>
-                	<a href="{{domain}}/zhangtao/" target="_blank">张　涛</a> 
-                </li>
-                
-            	<li>
-                	<a href="http://sunyegang/" target="_blank">
-                    	<img src="{{domain}}/W020170412646318936529.jpg" width="55" height="54" />
-                    </a>
-                	<a href="{{domain}}/sunyegang/" target="_blank">孙也刚</a> 
-                </li>
-                
-            	<li>
-                	<a href="{{domain}}/lishushen/" target="_blank">
-                    	<img src="{{domain}}/W020171221519740966468.jpg" width="55" height="54" />
-                    </a>
-                	<a href="{{domain}}/lishushen/" target="_blank">李树深</a> 
-                </li>
-                
-            	<li>
-                	<a href="{{domain}}/dengmaicun/" target="_blank">
-                    	<img src="{{domain}}/W020141124362395652590.jpg" width="55" height="54" />
-                    </a>
-                	<a href="{{domain}}/dengmaicun/" target="_blank">邓麦村</a> 
-                </li>
-                
-            	<li>
-                	<a href="{{domain}}/heyan/" target="_blank">
-                    	<img src="{{domain}}/W020161219591459726361.jpg" width="55" height="54" />
-                    </a>
-                	<a href="{{domain}}/heyan/" target="_blank">何　岩</a> 
-                </li>
-                
-            	<li>
-                	<a href="{{domain}}/dengyong" target="_blank">
-                    	<img src="{{domain}}/W020141124363193873357.jpg" width="55" height="54" />
-                    </a>
-                	<a href="{{domain}}/dengyong" target="_blank">邓　勇</a> 
-                </li>
-                
-            	<li>
-                	<a href="{{domain}}/wangkeqiang/" target="_blank">
-                    	<img src="{{domain}}/W020160511627027460951.jpg" width="55" height="54" />
-                    </a>
-                	<a href="{{domain}}/wangkeqiang/" target="_blank">汪克强</a> 
-                </li>
-                
-            </ul>
-        </div>
-        <div class="qh_con1xc">
-        	<h2>机构设置</h2>
-            <div class="qh_con1xc1" style="width:130px; margin:0 3px 0 5px">
-            	<h3>院机关</h3>
-                <ul>
-                	
-                	<li><a href="{{domain}}/go/" title="办公厅" target="_blank">办公厅</a></li>
-                    
-                	<li><a href="{{domain}}/casad/" title="学部工作局" target="_blank">学部工作局</a></li>
-                    
-                	<li><a href="{{domain}}/bfse/" title="前沿科学与教育局" target="_blank">前沿科学与教育局</a></li>
-                    
-                	<li><a href="{{domain}}/bmrdp/" title="重大科技任务局" target="_blank">重大科技任务局</a></li>
-                    
-                	<li><a href="{{domain}}/std/" title="科技促进发展局" target="_blank">科技促进发展局</a></li>
-                    
-                	<li><a href="{{domain}}/bdp/" title="发展规划局" target="_blank">发展规划局</a></li>
-                    
-                	<li><a href="{{domain}}/bpf/" title="条件保障与财务局" target="_blank">条件保障与财务局</a></li>
-                    
-                	<li><a href="{{domain}}/pe/" title="人事局" target="_blank">人事局</a></li>
-                    
-                	<li><a href="{{domain}}/jgdw/" title="直属机关党委" target="_blank">直属机关党委</a></li>
-                    
-                	<li><a href="{{domain}}/bic/" title="国际合作局" target="_blank">国际合作局</a></li>
-                    
-                	<li><a href="{{domain}}/bsc/" title="科学传播局" target="_blank">科学传播局</a></li>
-                    
-                	<li><a href="{{domain}}/jianshen/" title="监督与审计局" target="_blank">监督与审计局</a></li>
-                    
-                	<li><a href="{{domain}}/lt/" title="离退休干部工作局" target="_blank">离退休干部工作局</a></li>
-                    
-                </ul>
-            </div>
-<style type="text/css">
-.qh_con1xc2 li{line-height:26px;}
-.qh_con1xc2 ul{padding-bottom:0;}
-</style>
-            <div class="qh_con1xc2" style="width:87px; margin-right:3px">
-            	<h3>派驻机构</h3>
-                <ul style="padding-bottom:254px">
-                	<li style="line-height:18px; padding-top:4px"><a href="{{domain}}/jijianzu/" target="_blank">中央纪委驻中国科学院纪检组</a></li>
-                </ul>
-            </div>
-			<div class="qh_con1xc2" style="width:78px; margin-right:3px">
-            	<h3>分院</h3>
-                <ul style="padding-bottom:0px">
-                	
-                	<li><a href="{{domain}}bjb/" title="北京分院" target="_blank">北京分院</a></li>
-                    
-                	<li><a href="{{domain}}syb/" title="沈阳分院" target="_blank">沈阳分院</a></li>
-                    
-                	<li><a href="{{domain}}ccb/" title="长春分院" target="_blank">长春分院</a></li>
-                    
-                	<li><a href="{{domain}}shb/" title="上海分院" target="_blank">上海分院</a></li>
-                    
-                	<li><a href="{{domain}}njb/" title="南京分院" target="_blank">南京分院</a></li>
-                    
-                	<li><a href="{{domain}}whb/" title="武汉分院" target="_blank">武汉分院</a></li>
-                    
-                	<li><a href="{{domain}}gzb/" title="广州分院" target="_blank">广州分院</a></li>
-                    
-                	<li><a href="{{domain}}cdb/" title="成都分院" target="_blank">成都分院</a></li>
-                    
-                	<li><a href="{{domain}}kmb/" title="昆明分院" target="_blank">昆明分院</a></li>
-                    
-                	<li><a href="{{domain}}xab/" title="西安分院" target="_blank">西安分院</a></li>
-                    
-                	<li><a href="{{domain}}lzb/" title="兰州分院" target="_blank">兰州分院</a></li>
-                    
-                	<li><a href="{{domain}}xjb/" title="新疆分院" target="_blank">新疆分院</a></li>
-                    
-                </ul>
-            </div>
-            <div class="qh_con1xc3" style="width:133px">
-            	<h3>院属机构</h3>
-                <ul style="padding-bottom:48px;">
-                
-                	<li><a href="{{domain}}/zz/jg/ys/yj/"  title="研究单位">研究单位</a></li>
-                
-                	<li><a href="{{domain}}/zz/jg/ys/xx/"  title="学校及公共支撑单位">学校及公共支撑单位</a></li>
-                
-                	<li><a href="{{domain}}/zz/jg/ys/qt/"  title="其他单位">其他单位</a></li>
-                
-                	<li><a href="{{domain}}/zz/jg/ys/gj/"  title="共建单位">共建单位</a></li>
-                
-                	<li><a href="{{domain}}/zz/jg/ys/yzj/"  title="院直接投资的全资及控股企业">院直接投资的全资及控股企业</a></li>
-                
-                	<li><a href="{{domain}}/zz/jg/ys/sljg/"  title="四类机构">四类机构</a></li>
-                
-                	<li><a href="{{domain}}/zz/jg/ys/ys/"  title="院级非法人单元">院级非法人单元</a></li>
-                
-                	<li><a href="{{domain}}/zz/jg/ys/sjfzjg/"  title="所级分支机构">所级分支机构</a></li>
-                
-                	<li><a href="{{domain}}/zz/jg/ys/jwjg/"  title="境外机构">境外机构</a></li>
-                
-                	<li><a href="{{domain}}/zz/jg/ys/xg/"  title="相关组织">相关组织</a></li>
-                
-                </ul>
-            </div><br class="clear"  />
-        </div><br class="clear"  />
-    </div>
-</div> 
-<style type="text/css">
-.qh_con2xb h2{margin-bottom:18px;}
-.qh_con2xa li{line-height:28px;}
-.qh_con2xc ul{padding-bottom:0;}
-.qh_con2xc li{line-height:25px;}
-.qh_con2xd li{line-height:28px; *line-height:27px;}
-.qh_con2xd ul{margin-bottom:0; padding-top:3px; *padding-top:3px;}
-.qh_con2xd h2{*margin-bottom:0;}
-</style>
-<div id=qh_con2 onMouseOver="mynav2.className='mynav1';mynav2.style.color='#10218b';" onMouseOut="mynav2.className='';mynav2.style.color='';" style="DISPLAY: none" class="ctop3az">
-	<div class="qh_con2x">
-    	<div class="qh_con2xa">
-        	<h2>创新单元</h2>
-	            <ul>
-                	
-                	<li><a href="{{domain}}/lssf/" target="_blank">重大科技基础设施</a></li>
-                    
-                	<li><a href="{{domain}}bfse/sysjcss/gjsys/" target="_blank">国家实验室</a></li>
-                    
-                	<li><a href="{{domain}}bfse/sysjcss/gjzdsys/" target="_blank">国家重点实验室</a></li>
-                    
-                	<li><a href="{{domain}}bfse/sysjcss/yzdsys/" target="_blank">中国科学院重点实验室</a></li>
-                    
-                	<li><a href="{{domain}}std/cxzt/201306/t20130619_3877681.html" target="_blank">国家工程研究中心</a></li>
-                    
-                	<li><a href="{{domain}}std/cxzt/201306/t20130619_3877682.html" target="_blank">国家工程技术研究中心</a></li>
-                    
-                	<li><a href="{{domain}}std/cxzt/201306/t20130619_3877684.html" target="_blank">国家工程实验室</a></li>
-                    
-                	<li><a href="{{domain}}/zt/kjzt/ywtz/" target="_blank">野外台站网络</a></li>
-                    
-                </ul>
-        		<img src='{{domain}}/P020141016702706183674.jpg'/>        
-        	</div>
-        <div class="qh_con2xb">
-        	<h2>先导专项</h2>
-          <ul>
-                	<li class="qh_con2xbli1"><a href="{{domain}}/alzx/" target="_blank">A类先导专项</a></li>
-                    <li class="qh_con2xbli2"><a href="{{domain}}/kxyj/index.shtml">B类先导专项</a></li>
-                    <li class="qh_con2xbli3"><a href="{{domain}}/kxyj/xd/zxdt/">专项动态</a></li>
-                </ul>
-                <h2>科研产出</h2>
-          <dl>
-                	<dd><a href="{{domain}}/kxyj/index.shtml">论文</a></dd>
-                    <dd><a href="{{domain}}/kxyj/index.shtml">专利</a></dd>
-                    <dd><a href="{{domain}}/kxyj/index.shtml">科研成果</a></dd>
-                    <dd><a href="{{domain}}/kxyj/kx/">科学数据库</a></dd>
-                </dl>
-        </div>
-
-        <div class="qh_con2xc">
-       	  <h2>科技奖励</h2>
-        	<img src='{{domain}}/P020141016708525455534.jpg'/>
-            <ul>
-               	
-           	   <li style="line-height:22px;"><a href="{{domain}}/ky/kjjl/gjzgkxjsj/" target="_blank" title="国家最高科学技术奖">国家最高科学技术奖</a></li>
-				
-           	   <li style="line-height:22px;"><a href="{{domain}}/ky/kjjl/gjzrkxj/" target="_blank" title="国家自然科学奖">国家自然科学奖</a></li>
-				
-           	   <li style="line-height:22px;"><a href="{{domain}}/ky/kjjl/gjjsfmj/" target="_blank" title="国家技术发明奖">国家技术发明奖</a></li>
-				
-           	   <li style="line-height:22px;"><a href="{{domain}}/ky/kjjl/gjkxjbj/" target="_blank" title="国家科学进步奖">国家科学进步奖</a></li>
-				
-           	   <li style="line-height:22px;"><a href="{{domain}}/ky/kjjl/gjkxjshzj/" target="_blank" title="国家科学技术合作奖">国家科学技术合作奖</a></li>
-				
-           	   <li style="line-height:22px;"><a href="{{domain}}/ky/kjjl/yjckjcjj/" target="_blank" title="中国科学院杰出科技成就奖">中国科学院杰出科技成就奖</a></li>
-				
-           	   <li style="line-height:22px;"><a href="{{domain}}/ky/kjjl/ygjkjhzj/" target="_blank" title="中国科学院国际科技合作奖">中国科学院国际科技合作奖</a></li>
-				
-           	   <li style="line-height:22px;"><a href="{{domain}}/ky/kjjl/zkykucjfzj/" target="_blank" title="中国科学院科技促进发展奖">中国科学院科技促进发展奖</a></li>
-				
-           	   <li style="line-height:22px;"><a href="{{domain}}/tsaf/" target="_blank" title="陈嘉庚科学奖">陈嘉庚科学奖</a></li>
-				
-            </ul>
-        </div>
-        <div class="qh_con2xd">
-        	<h2><span>科研进展</span><a href="{{domain}}/syky/">更多</a></h2>
-          <ul>
-          {% for i in random.sample(newst,10) %}
-                     <li>
-                    	<a href="{{domain}}{{i['url'][1:]}}" title="{{i['title']}}" target="_blank">{{i['title']}}...</a>
-                        <span>{{i['date']}}</span>
-                    </li>
-          {% end %}
-              
-          </ul>
-<br class="clear"  />
-        </div>
-        <br class="clear"  />
-    </div>
-</div> 
-<div id=qh_con3 onMouseOver="mynav3.className='mynav1';mynav3.style.color='#10218b';" onMouseOut="mynav3.className='';mynav3.style.color='';" style="DISPLAY: none" class="ctop3az">
-	<div class="qh_con3x">
-    	<div class="qh_con3xa">
-       	  <h2>中国科学技术大学</h2>
-        	   <a href="{{domain}}/ustc/" target="_blank"><img src='{{domain}}/P020141016707006860002.jpg'/></a>
-            <p style="line-height:26px;height:auto;">
-            	
-                	  <a href="{{domain}}/ustcedu/" target="_blank">中国科学技术大学（简称“中科大”）于1958年由中国科学院创建于北京，1970年学校迁至安徽省合肥市。中科大坚持“全院办校、所系结合”的办学方针，是一所以前沿科学和高新技术为主、兼有特色管理与人文学科的研究型大学。</a>
-                
-            </p>
-
-
-
-
-        </div>
-    	<div class="qh_con3xa">
-       	  <h2>中国科学院大学</h2>
-        	   <a href="{{domain}}/ucasac/" target="_blank"><img src='{{domain}}/P020141016706898311638.jpg'/></a>
-            <p style="line-height:26px;height:auto;">
-            	
-                	  <a href="{{domain}}/ucasac/" target="_blank">中国科学院大学（简称“国科大”）始建于1978年，其前身为中国科学院研究生院，2012年经教育部批准更名为中国科学院大学。国科大实行“科教融合”的办学方针，与中国科学院直属研究机构在管理体制、师资队伍、培养体系、科研工作等方面高度融合，是一所以研究生教育为主的独具特色的高等学校。</a>
-                
-            </p>
-
-
-
-
-        </div>
-        <div class="qh_con3xa">
-       	  <h2>上海科技大学</h2>
-                <a href="{{domain}}/shanghaitech/" target="_blank"><img src='{{domain}}/P020170411550885200979.jpg'/></a>
-			<p style="line-height:26px;height:auto;">
-                
-                	<a href="{{domain}}/shanghaitech/" target="_blank">上海科技大学（简称“上科大”），由上海市人民政府与中国科学院共同举办、共同建设，2013年经教育部正式批准。上科大秉持“服务国家发展战略，培养创新创业人才”的办学方针，实现科技与教育、科教与产业、科教与创业的融合，是一所小规模、高水平、国际化的研究型、创新型大学。</a>
-                
-			</p>
-               
-
-
-
-
-
-        </div>
-        <div class="qh_con3xc">
-        	<h2><span>工作动态</span><a href="{{domain}}/rcjy/gz/">更多</a></h2>
-          <ul>
-				{% for i in random.sample(newst,10) %}
-                	<li>
-                    <a href="{{domain}}{{i['url'][1:]}}" title="{{i['title']}}" target="_blank">{{i['title']}}</a>
-                    <span>{{i['date']}}</span>
-                    </li>
-                {% end %}
-          </ul>
-          <div class="qh_con3xcx">
-          <div class="qh_con3xc1">
-          <div id="qh_con3xc1x" class="qh_con3xc1x"><a href="{{domain}}/rcjy/zs/">更多</a></div>
-        <dl>
-            <dd class="now">招生信息</dd>
-        </dl>
-    </div>
-    <div class="qh_con3xc2">
-        <div>
-        	<div class="qh_con3xc2y">
-            	<ul>
-      				{% for i in random.sample(newst,10) %}
-                	<li>
-                    	<a href="{{domain}}{{i['url'][1:]}}" title="{{i['title']}}" target="_blank">{{i['title']}}</a>
-                        <span>{{i['date']}}</span>
-                    </li>
-					{% end %}
-	            </ul>
-            </div>
-        </div>
-    </div>
-    </div>
-        </div>
-        <br class="clear"  />
-    </div>
-</div> 
-<style type="text/css">
-.qh_con4xa ul{*margin-bottom:0;}
-.qh_con4xd li{*line-height:26px;}
-.qh_con6xc li{*line-height:22px;}
-</style>
-
-<div id=qh_con4 onMouseOver="mynav4.className='mynav4';mynav4.style.color='#10218b';" onMouseOut="mynav4.className='';mynav4.style.color='';" style="DISPLAY: none" class="ctop3az">
-
-	<div class="qh_con4x">
-   	  <div class="qh_con4xa">
-        	<h2>学部组织</h2>
-	        <ul>
-               	{% for i in newst[24:29] %}
-           	     <li><a href="{{domain}}{{i['url'][1:]}}" target="_blank" titlt="{{i['title']}}">{{i['title']}}</a></li>
-                {% end %}
-            </ul>
-          <dl>
-           	  <dd><a href="{{domain}}casad/doc/14972.html"><img src="{{domain}}/ch_gfa_03_2014.jpg" width="214" height="46" /></a></dd>
-              <dd><a href="{{domain}}casad/doc/14860.html"><img src="{{domain}}/ch_gfa_07_2014.jpg" width="214" height="46" /></a></dd>
-              <dd><a href="{{domain}}/zt/sszt/casad60/xblc/201505/t20150512_4354052.shtml"><img src="{{domain}}/ch_gfa_09_2014.jpg" width="214" height="46" /></a></dd>
-          </dl>
-        </div>
-        <div class="qh_con4xb">
-       	  <h2>院士信息</h2>
-          	<img src='{{domain}}/P020141016709171162540.jpg'/> 
-            <ul>
-            	<li class="qh_con4xbli1" style="margin-bottom:28px;"><a href="{{domain}}casad/chnl/371/index.html" target="_blank">全体院士名单</a></li>
-                <li class="qh_con4xbli2" style="margin-bottom:28px;"><a href="{{domain}}casad/chnl/315/index.html" target="_blank">外籍院士名单</a></li>
-                <li class="qh_con4xbli3" style="margin-bottom:28px;"><a href="{{domain}}/casad/doc/14959.html" target="_blank">院士学部分布图</a></li>
-                <li class="qh_con4xbli4" style="margin-bottom:0;"><a href="{{domain}}/casad/doc/14962.html" target="_blank">年龄分布图</a></li>
-           </ul>
-          </div>
-
-
-        <div class="qh_con4xc">
-        	<h2>院士大会</h2>
-          	<img src='{{domain}}/P0201410167093771010000.jpg'/> 
-            <ul>
-               	
-           	   <li><a href="{{domain}}/zt/hyzt/ysdh18th/" target="_blank" title="中国科学院第十八次院士大会">中国科学院第十八次院士大会</a></li>
-				
-           	   <li><a href="{{domain}}/zt/hyzt/ysdh17th/" target="_blank" title="中国科学院第十七次院士大会">中国科学院第十七次院士大会</a></li>
-				
-           	   <li><a href="{{domain}}/zt/hyzt/16thysdh/" target="_blank" title="中国科学院第十六次院士大会">中国科学院第十六次院士大会</a></li>
-				
-           	   <li><a href="{{domain}}/zt/hyzt/zgkxydswcysdh/" target="_blank" title="中国科学院第十五次院士大会">中国科学院第十五次院士大会</a></li>
-				
-           	   <li><a href="{{domain}}/zt/hyzt/zkyd14cysdh/" target="_blank" title="中国科学院第十四次院士大会">中国科学院第十四次院士大会</a></li>
-				
-           	   <li><a href="{{domain}}/zt/jzt/yszt/zgkxydsscysdh/" target="_blank" title="中国科学院第十三次院士大会">中国科学院第十三次院士大会</a></li>
-				
-           	   <li><a href="{{domain}}/xb/ysdh/200908/t20090810_2355203.shtml" target="_blank" title="中国科学院第十二次院士大会">中国科学院第十二次院士大会</a></li>
-
-            </ul>
-          <h3><a href="{{domain}}/xb/ysdh/" target="_blank">历次院士大会 >></a></h3>
-        </div>
-        <div class="qh_con4xd">
-        	<h2><a href="{{domain}}/xb/gz/" style="float:right;padding-left:15px;margin-right:10px;background: url({{domain}}/ch_kba_03_2014.jpg) no-repeat left; font-weight: 400; display:block;" >更多</a><span>工作动态</span></h2>
-          <ul>
-      				{% for i in newst[30:40] %}
-                	<li>
-                    	<a href="{{domain}}{{i['url'][1:]}}" title="{{i['title']}}" target="_blank">{{i['title']}}</a>
-                        <span>{{i['date']}}</span>
-                    </li>
-					    {% end %}
-          </ul>
-        </div>
-        <br class="clear"  />
-    </div>
-</div>
-<div id=qh_con5 onMouseOver="mynav5.className='mynav1';mynav5.style.color='#10218b';" onMouseOut="mynav5.className='';mynav5.style.color='';" style="DISPLAY: none" class="ctop3az">
-	<div class="qh_con5x">
-    	<div class="qh_con5xa">
-        	<ul>
-            	<li><a href="{{domain}}/casisd/" target="_blank" title="科技战略咨询"><img src='{{domain}}/P020141016709977175197.jpg'/></a><a href="{{domain}}casisd.cn" target="_blank" title="科技战略咨询">科技战略咨询</a></li>
-                <li class="qh_con5xalix"><a href="{{domain}}casip/ac/cn/" target="_blank" title="知识产权网"><img src='{{domain}}/P020141016710135653310.jpg'/></a><a href="{{domain}}casip/ac/cn/" target="_blank" title="知识产权网">知识产权网</a></li>
-            </ul>
-            <ul>
-            	<li><a href="{{domain}}las/" target="_blank" title="文献检索"><img src='{{domain}}/P020141016710296935358.jpg'/></a><a href="{{domain}}lasaccn/" target="_blank" title="文献检索">文献检索</a></li>
-                <li class="qh_con5xalix"><a href="{{domain}}castt/" target="_blank" title="科技产业网"><img src='{{domain}}/P020141016710455619936.jpg'/></a><a href="{{domain}}castt/ac/cn/" target="_blank" title="科技产业网">科技产业网</a></li>
-            </ul>
-            <ul class="qh_con5xaulx">
-           	  <li><a href="{{domain}}ecas/" target="_blank" title="信息化工作网"><img src='{{domain}}/P020141016710628935212.jpg'/></a><a href="{{domain}}ecas.cas.cn/" target="_blank" title="信息化工作网">信息化工作网</a></li>
-                <li class="qh_con5xalix qh_con5xaliy"><a href="{{domain}}kjtj/" target="_blank" title="科技条件信息平台"><img src='{{domain}}/P020141016710806418666.jpg'/></a><br class="clear"  /><a href="{{domain}}kjtj/" target="_blank" title="科技条件信息平台">科技条件信息平台</a></li>
-            </ul>
-        </div>
-        <div class="qh_con5xb">
-       	  <h2>出版物</h2>
-          <h3>期刊<a href="{{domain}}/zy/cb/qk/">更多</a></h3>
-          
-            <ul>
-            	<li><a href="{{domain}}/bulletin/" target="_blank"><img src="{{domain}}/W020170814535345374774.jpg" width="72" height="96" /></a></li>
-                <li class="qh_con5xblix"><h4><a href="{{domain}}bulletin/" target="_blank" title="中国科学院院刊">中国科学院院刊</a></h4><p>《中国科学院院刊》（中文版）是中国科学院主办的以战略与决策研究为主的科技综...</p></li>
-            </ul>
-          
-            <ul>
-            	<li><a href="{{domain}}/scichina/publisher/scp/journal/" target="_blank"><img src="{{domain}}/W020161222553063597215.jpg" width="72" height="96" /></a></li>
-                <li class="qh_con5xblix"><h4><a href="{{domain}}/scichina/publisher/scp/journal/" target="_blank" title="科学通报">科学通报</a></h4><p>《科学通报》是自然科学综合性学术刊物，力求及时报道自然科学各领域具有创新性...</p></li>
-            </ul>
-          
-            <ul>
-            	<li><a href="{{domain}}/scichina/publications/" target="_blank"><img src="{{domain}}/W020161222553219254523.jpg" width="72" height="96" /></a></li>
-                <li class="qh_con5xblix"><h4><a href="{{domain}}/scichina/publications/" target="_blank" title="中国科学">中国科学</a></h4><p>覆盖数学、物理、化学、生命科学、地球科学、信息科学、技术科学与天文学等学科...</p></li>
-            </ul>
-          
-
-            <div class="qh_con5xb1">
-            <form name="frmPatent" method="post" action="{{domain}}/search/sourcedb/monograph/" onSubmit="return search_check2()">
-               <input name="monograph_dwdm" type="hidden" id="monograph_dwdm" value="" />
-<table width="100%" height="40" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td height="40"><span>专著检索</span></td>
-
-    <td>著作名称</td>
-    <td><input class="qh_con5xb1inputx" name="monograph_zzmc" id="monograph_zzmc" type="text" /></td>
-    <td>主编名称</td>
-    <td><input class="qh_con5xb1inputx" name="monograph_zb" id="monograph_zb" type="text" /></td>
-    <td><input name="imageField2" type="image" src="{{domain}}/ch_jop_03_2014.jpg" id="imageField2" /></td>
-  </tr>
-</table>
-
+                $("input[name='searchword']").val(dealKeywords(searchword, "and"));
+                $("input[name='preKeyword']").val($("#iptSword").val().replace(/^\s+|\s+$/g, ''));
+                $("form[name='searchform']").submit();
+            }
+        </script>
+        <div class="ctop3ay">
+            <form name="searchform" method="post" action="{{domain}}/was5/web/search/" onSubmit="return search_check()"
+                  target="_top">
+                <INPUT type="hidden" name="perpage"/>
+                <input type="hidden" name="searchword" id="searchword" value=""/>
+                <input type="hidden" name="preKeyword" id="preKeyword" value=""/>
+                <INPUT name="orderby" type="hidden" value="-RANK,RELEVANCE,-DOCRELTIME"/>
+                <INPUT name="channelid" type="hidden" value="233173"/>
+                <table width="170" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td><input type="text" class="ctop3ayinputx" name="iptSword" id="iptSword"/></td>
+                        <td><input type="image" name="image" src="{{domain}}/ch_ira_04_2014.jpg"/></td>
+                    </tr>
+                </table>
             </form>
+        </div>
+        <br class="clear"/>
+        <div id=qh_con1 onMouseOver="mynav1.className='mynav1';mynav1.style.color='#10218b';"
+             onMouseOut="mynav1.className='';mynav1.style.color='';" style="DISPLAY: none; z-index:9999"
+             class="ctop3az">
+            <div class="qh_con1x">
+                <div class="qh_con1xa">
+                    <div class="qh_con1xa1">
+                        <h2>院况介绍</h2>
+                        <img src='{{domain}}/P020141016586199134429.jpg'/>
+                        <div class="scyxinjia">
+
+
+                            <P>1949年，伴随着新中国的诞生，中国科学院成立。</P>
+                            <P>
+                                作为国家在科学技术方面的最高学术机构和全国自然科学与高新技术的综合研究与发展中心，建院以来，中国科学院时刻牢记使命，与科学共进，与祖国同行，以国家富强、人民幸福为己任，人才辈出，硕果累累，为我国科技进步、经济社会发展和国家安全做出了不可替代的重要贡献。</P>
+
+                        </div>
+                        <style type="text/css">
+                            .scyxinjia {
+                                width: 275px;
+                                margin: 0 auto;
+                                padding-top: 10px;
+                            }
+
+                            .qh_con1xa1 p {
+                                line-height: 26px;
+                            }
+                        </style>
+
+                        <h3 style="border-bottom:none;"><a href="{{domain}}/zz/yk/201410/t20141016_4225142.shtml"
+                                                           target="_blank">查看详细 >></a></h3>
+                    </div>
+                    <!--轮播-->
+
+                </div>
+                <!--轮播-->
+
+                <div class="qh_con1xb">
+                    <h2>院领导集体</h2>
+                    <ul>
+
+                        <li>
+                            <a href="{{domain}}/baichunli/" target="_blank">
+                                <img src="{{domain}}/W020141124359633436674.jpg" width="55" height="54"/>
+                            </a>
+                            <a href="{{domain}}/baichunli/" target="_blank">白春礼</a>
+                        </li>
+
+                        <li>
+                            <a href="{{domain}}/houjianguo/" target="_blank">
+                                <img src="{{domain}}/W020180327620892605401.jpg" width="55" height="54"/>
+                            </a>
+                            <a href="{{domain}}/houjianguo/" target="_blank">侯建国</a>
+                        </li>
+
+                        <li>
+                            <a href="{{domain}}/zhangjie/" target="_blank">
+                                <img src="{{domain}}/W020171129313054149545.jpg" width="55" height="54"/>
+                            </a>
+                            <a href="{{domain}}/zhangjie/" target="_blank">张　杰</a>
+                        </li>
+
+                        <li>
+                            <a href="{{domain}}/dingzhongli/" target="_blank">
+                                <img src="{{domain}}/W020141124360936385088.jpg" width="55" height="54"/>
+                            </a>
+                            <a href="{{domain}}/dingzhongli/" target="_blank">丁仲礼</a>
+                        </li>
+
+                        <li>
+                            <a href="{{domain}}/zhangyaping/" target="_blank">
+                                <img src="{{domain}}/W020141124361316748748.jpg" width="55" height="54"/>
+                            </a>
+                            <a href="{{domain}}/zhangyaping/" target="_blank">张亚平</a>
+                        </li>
+
+                        <li>
+                            <a href="{{domain}}/xianglibin/" target="_blank">
+                                <img src="{{domain}}/W020160408552369572669.jpg" width="55" height="54"/>
+                            </a>
+                            <a href="{{domain}}/xianglibin/" target="_blank">相里斌</a>
+                        </li>
+
+                        <li>
+                            <a href="{{domain}}/zhangtao" target="_blank">
+                                <img src="{{domain}}/W020161226351620376791.jpg" width="55" height="54"/>
+                            </a>
+                            <a href="{{domain}}/zhangtao/" target="_blank">张　涛</a>
+                        </li>
+
+                        <li>
+                            <a href="http://sunyegang/" target="_blank">
+                                <img src="{{domain}}/W020170412646318936529.jpg" width="55" height="54"/>
+                            </a>
+                            <a href="{{domain}}/sunyegang/" target="_blank">孙也刚</a>
+                        </li>
+
+                        <li>
+                            <a href="{{domain}}/lishushen/" target="_blank">
+                                <img src="{{domain}}/W020171221519740966468.jpg" width="55" height="54"/>
+                            </a>
+                            <a href="{{domain}}/lishushen/" target="_blank">李树深</a>
+                        </li>
+
+                        <li>
+                            <a href="{{domain}}/dengmaicun/" target="_blank">
+                                <img src="{{domain}}/W020141124362395652590.jpg" width="55" height="54"/>
+                            </a>
+                            <a href="{{domain}}/dengmaicun/" target="_blank">邓麦村</a>
+                        </li>
+
+                        <li>
+                            <a href="{{domain}}/heyan/" target="_blank">
+                                <img src="{{domain}}/W020161219591459726361.jpg" width="55" height="54"/>
+                            </a>
+                            <a href="{{domain}}/heyan/" target="_blank">何　岩</a>
+                        </li>
+
+                        <li>
+                            <a href="{{domain}}/dengyong" target="_blank">
+                                <img src="{{domain}}/W020141124363193873357.jpg" width="55" height="54"/>
+                            </a>
+                            <a href="{{domain}}/dengyong" target="_blank">邓　勇</a>
+                        </li>
+
+                        <li>
+                            <a href="{{domain}}/wangkeqiang/" target="_blank">
+                                <img src="{{domain}}/W020160511627027460951.jpg" width="55" height="54"/>
+                            </a>
+                            <a href="{{domain}}/wangkeqiang/" target="_blank">汪克强</a>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="qh_con1xc">
+                    <h2>机构设置</h2>
+                    <div class="qh_con1xc1" style="width:130px; margin:0 3px 0 5px">
+                        <h3>院机关</h3>
+                        <ul>
+
+                            <li><a href="{{domain}}/go/" title="办公厅" target="_blank">办公厅</a></li>
+
+                            <li><a href="{{domain}}/casad/" title="学部工作局" target="_blank">学部工作局</a></li>
+
+                            <li><a href="{{domain}}/bfse/" title="前沿科学与教育局" target="_blank">前沿科学与教育局</a></li>
+
+                            <li><a href="{{domain}}/bmrdp/" title="重大科技任务局" target="_blank">重大科技任务局</a></li>
+
+                            <li><a href="{{domain}}/std/" title="科技促进发展局" target="_blank">科技促进发展局</a></li>
+
+                            <li><a href="{{domain}}/bdp/" title="发展规划局" target="_blank">发展规划局</a></li>
+
+                            <li><a href="{{domain}}/bpf/" title="条件保障与财务局" target="_blank">条件保障与财务局</a></li>
+
+                            <li><a href="{{domain}}/pe/" title="人事局" target="_blank">人事局</a></li>
+
+                            <li><a href="{{domain}}/jgdw/" title="直属机关党委" target="_blank">直属机关党委</a></li>
+
+                            <li><a href="{{domain}}/bic/" title="国际合作局" target="_blank">国际合作局</a></li>
+
+                            <li><a href="{{domain}}/bsc/" title="科学传播局" target="_blank">科学传播局</a></li>
+
+                            <li><a href="{{domain}}/jianshen/" title="监督与审计局" target="_blank">监督与审计局</a></li>
+
+                            <li><a href="{{domain}}/lt/" title="离退休干部工作局" target="_blank">离退休干部工作局</a></li>
+
+                        </ul>
+                    </div>
+                    <style type="text/css">
+                        .qh_con1xc2 li {
+                            line-height: 26px;
+                        }
+
+                        .qh_con1xc2 ul {
+                            padding-bottom: 0;
+                        }
+                    </style>
+                    <div class="qh_con1xc2" style="width:87px; margin-right:3px">
+                        <h3>派驻机构</h3>
+                        <ul style="padding-bottom:254px">
+                            <li style="line-height:18px; padding-top:4px"><a href="{{domain}}/jijianzu/"
+                                                                             target="_blank">中央纪委驻中国科学院纪检组</a></li>
+                        </ul>
+                    </div>
+                    <div class="qh_con1xc2" style="width:78px; margin-right:3px">
+                        <h3>分院</h3>
+                        <ul style="padding-bottom:0px">
+
+                            <li><a href="{{domain}}bjb/" title="北京分院" target="_blank">北京分院</a></li>
+
+                            <li><a href="{{domain}}syb/" title="沈阳分院" target="_blank">沈阳分院</a></li>
+
+                            <li><a href="{{domain}}ccb/" title="长春分院" target="_blank">长春分院</a></li>
+
+                            <li><a href="{{domain}}shb/" title="上海分院" target="_blank">上海分院</a></li>
+
+                            <li><a href="{{domain}}njb/" title="南京分院" target="_blank">南京分院</a></li>
+
+                            <li><a href="{{domain}}whb/" title="武汉分院" target="_blank">武汉分院</a></li>
+
+                            <li><a href="{{domain}}gzb/" title="广州分院" target="_blank">广州分院</a></li>
+
+                            <li><a href="{{domain}}cdb/" title="成都分院" target="_blank">成都分院</a></li>
+
+                            <li><a href="{{domain}}kmb/" title="昆明分院" target="_blank">昆明分院</a></li>
+
+                            <li><a href="{{domain}}xab/" title="西安分院" target="_blank">西安分院</a></li>
+
+                            <li><a href="{{domain}}lzb/" title="兰州分院" target="_blank">兰州分院</a></li>
+
+                            <li><a href="{{domain}}xjb/" title="新疆分院" target="_blank">新疆分院</a></li>
+
+                        </ul>
+                    </div>
+                    <div class="qh_con1xc3" style="width:133px">
+                        <h3>院属机构</h3>
+                        <ul style="padding-bottom:48px;">
+
+                            <li><a href="{{domain}}/zz/jg/ys/yj/" title="研究单位">研究单位</a></li>
+
+                            <li><a href="{{domain}}/zz/jg/ys/xx/" title="学校及公共支撑单位">学校及公共支撑单位</a></li>
+
+                            <li><a href="{{domain}}/zz/jg/ys/qt/" title="其他单位">其他单位</a></li>
+
+                            <li><a href="{{domain}}/zz/jg/ys/gj/" title="共建单位">共建单位</a></li>
+
+                            <li><a href="{{domain}}/zz/jg/ys/yzj/" title="院直接投资的全资及控股企业">院直接投资的全资及控股企业</a></li>
+
+                            <li><a href="{{domain}}/zz/jg/ys/sljg/" title="四类机构">四类机构</a></li>
+
+                            <li><a href="{{domain}}/zz/jg/ys/ys/" title="院级非法人单元">院级非法人单元</a></li>
+
+                            <li><a href="{{domain}}/zz/jg/ys/sjfzjg/" title="所级分支机构">所级分支机构</a></li>
+
+                            <li><a href="{{domain}}/zz/jg/ys/jwjg/" title="境外机构">境外机构</a></li>
+
+                            <li><a href="{{domain}}/zz/jg/ys/xg/" title="相关组织">相关组织</a></li>
+
+                        </ul>
+                    </div>
+                    <br class="clear"/>
+                </div>
+                <br class="clear"/>
             </div>
-            <h3>电子杂志<a href="{{domain}}/zy/cb/dz/">更多</a></h3>
-            
-            <ul>
-            	<li><a href="{{domain}}/zkyzs/" target="_blank"><img src="{{domain}}/W020150817581800467963.jpg" width="72" height="96" /></a></li>
-                <li class="qh_con5xblix"><h4><a href="{{domain}}/zkyzs/" target="_blank" title="中科院之声电子杂志">中科院之声电子杂志</a></h4><p></p></li>
-            </ul>
-            
-            <ul>
-            	<li><a href="{{domain}}/sciencenet/dz/add_user/" target="_blank"><img src="{{domain}}/W020090824405398177876.jpg" width="72" height="96" /></a></li>
-                <li class="qh_con5xblix"><h4><a href="{{domain}}/sciencenet/dz/add_user/" target="_blank" title="科学网电子杂志">科学网电子杂志</a></h4><p></p></li>
-            </ul>
-            
-            <ul>
-            	<li><a href="{{domain}}/kepu/gb/ezine/index.html" target="_blank"><img src="{{domain}}/W020090824404835838486.jpg" width="72" height="96" /></a></li>
-                <li class="qh_con5xblix"><h4><a href="{{domain}}/kepu/gb/ezine/index.html" target="_blank" title="科普博览电子杂志">科普博览电子杂志</a></h4><p></p></li>
-            </ul>
-            
-        </div><br class="clear"  />
+        </div>
+        <style type="text/css">
+            .qh_con2xb h2 {
+                margin-bottom: 18px;
+            }
+
+            .qh_con2xa li {
+                line-height: 28px;
+            }
+
+            .qh_con2xc ul {
+                padding-bottom: 0;
+            }
+
+            .qh_con2xc li {
+                line-height: 25px;
+            }
+
+            .qh_con2xd li {
+                line-height: 28px;
+                *line-height: 27px;
+            }
+
+            .qh_con2xd ul {
+                margin-bottom: 0;
+                padding-top: 3px;
+                *padding-top: 3px;
+            }
+
+            .qh_con2xd h2 {
+                *margin-bottom: 0;
+            }
+        </style>
+        <div id=qh_con2 onMouseOver="mynav2.className='mynav1';mynav2.style.color='#10218b';"
+             onMouseOut="mynav2.className='';mynav2.style.color='';" style="DISPLAY: none" class="ctop3az">
+            <div class="qh_con2x">
+                <div class="qh_con2xa">
+                    <h2>创新单元</h2>
+                    <ul>
+
+                        <li><a href="{{domain}}/lssf/" target="_blank">重大科技基础设施</a></li>
+
+                        <li><a href="{{domain}}bfse/sysjcss/gjsys/" target="_blank">国家实验室</a></li>
+
+                        <li><a href="{{domain}}bfse/sysjcss/gjzdsys/" target="_blank">国家重点实验室</a></li>
+
+                        <li><a href="{{domain}}bfse/sysjcss/yzdsys/" target="_blank">中国科学院重点实验室</a></li>
+
+                        <li><a href="{{domain}}std/cxzt/201306/t20130619_3877681.html" target="_blank">国家工程研究中心</a></li>
+
+                        <li><a href="{{domain}}std/cxzt/201306/t20130619_3877682.html" target="_blank">国家工程技术研究中心</a>
+                        </li>
+
+                        <li><a href="{{domain}}std/cxzt/201306/t20130619_3877684.html" target="_blank">国家工程实验室</a></li>
+
+                        <li><a href="{{domain}}/zt/kjzt/ywtz/" target="_blank">野外台站网络</a></li>
+
+                    </ul>
+                    <img src='{{domain}}/P020141016702706183674.jpg'/>
+                </div>
+                <div class="qh_con2xb">
+                    <h2>先导专项</h2>
+                    <ul>
+                        <li class="qh_con2xbli1"><a href="{{domain}}/alzx/" target="_blank">A类先导专项</a></li>
+                        <li class="qh_con2xbli2"><a href="{{domain}}/kxyj/index.shtml">B类先导专项</a></li>
+                        <li class="qh_con2xbli3"><a href="{{domain}}/kxyj/xd/zxdt/">专项动态</a></li>
+                    </ul>
+                    <h2>科研产出</h2>
+                    <dl>
+                        <dd><a href="{{domain}}/kxyj/index.shtml">论文</a></dd>
+                        <dd><a href="{{domain}}/kxyj/index.shtml">专利</a></dd>
+                        <dd><a href="{{domain}}/kxyj/index.shtml">科研成果</a></dd>
+                        <dd><a href="{{domain}}/kxyj/kx/">科学数据库</a></dd>
+                    </dl>
+                </div>
+
+                <div class="qh_con2xc">
+                    <h2>科技奖励</h2>
+                    <img src='{{domain}}/P020141016708525455534.jpg'/>
+                    <ul>
+
+                        <li style="line-height:22px;"><a href="{{domain}}/ky/kjjl/gjzgkxjsj/" target="_blank"
+                                                         title="国家最高科学技术奖">国家最高科学技术奖</a></li>
+
+                        <li style="line-height:22px;"><a href="{{domain}}/ky/kjjl/gjzrkxj/" target="_blank"
+                                                         title="国家自然科学奖">国家自然科学奖</a></li>
+
+                        <li style="line-height:22px;"><a href="{{domain}}/ky/kjjl/gjjsfmj/" target="_blank"
+                                                         title="国家技术发明奖">国家技术发明奖</a></li>
+
+                        <li style="line-height:22px;"><a href="{{domain}}/ky/kjjl/gjkxjbj/" target="_blank"
+                                                         title="国家科学进步奖">国家科学进步奖</a></li>
+
+                        <li style="line-height:22px;"><a href="{{domain}}/ky/kjjl/gjkxjshzj/" target="_blank"
+                                                         title="国家科学技术合作奖">国家科学技术合作奖</a></li>
+
+                        <li style="line-height:22px;"><a href="{{domain}}/ky/kjjl/yjckjcjj/" target="_blank"
+                                                         title="中国科学院杰出科技成就奖">中国科学院杰出科技成就奖</a></li>
+
+                        <li style="line-height:22px;"><a href="{{domain}}/ky/kjjl/ygjkjhzj/" target="_blank"
+                                                         title="中国科学院国际科技合作奖">中国科学院国际科技合作奖</a></li>
+
+                        <li style="line-height:22px;"><a href="{{domain}}/ky/kjjl/zkykucjfzj/" target="_blank"
+                                                         title="中国科学院科技促进发展奖">中国科学院科技促进发展奖</a></li>
+
+                        <li style="line-height:22px;"><a href="{{domain}}/tsaf/" target="_blank"
+                                                         title="陈嘉庚科学奖">陈嘉庚科学奖</a></li>
+
+                    </ul>
+                </div>
+                <div class="qh_con2xd">
+                    <h2><span>科研进展</span><a href="{{domain}}/syky/">更多</a></h2>
+                    <ul>
+                        {% for i in random.sample(newst,10) %}
+                        <li>
+                            <a href="{{domain}}{{i['url'][1:]}}" title="{{i['title']}}" target="_blank">{{i['title']}}...</a>
+                            <span>{{i['date']}}</span>
+                        </li>
+                        {% end %}
+
+                    </ul>
+                    <br class="clear"/>
+                </div>
+                <br class="clear"/>
+            </div>
+        </div>
+        <div id=qh_con3 onMouseOver="mynav3.className='mynav1';mynav3.style.color='#10218b';"
+             onMouseOut="mynav3.className='';mynav3.style.color='';" style="DISPLAY: none" class="ctop3az">
+            <div class="qh_con3x">
+                <div class="qh_con3xa">
+                    <h2>中国科学技术大学</h2>
+                    <a href="{{domain}}/ustc/" target="_blank"><img src='{{domain}}/P020141016707006860002.jpg'/></a>
+                    <p style="line-height:26px;height:auto;">
+
+                        <a href="{{domain}}/ustcedu/" target="_blank">中国科学技术大学（简称“中科大”）于1958年由中国科学院创建于北京，1970年学校迁至安徽省合肥市。中科大坚持“全院办校、所系结合”的办学方针，是一所以前沿科学和高新技术为主、兼有特色管理与人文学科的研究型大学。</a>
+
+                    </p>
+
+
+                </div>
+                <div class="qh_con3xa">
+                    <h2>中国科学院大学</h2>
+                    <a href="{{domain}}/ucasac/" target="_blank"><img src='{{domain}}/P020141016706898311638.jpg'/></a>
+                    <p style="line-height:26px;height:auto;">
+
+                        <a href="{{domain}}/ucasac/" target="_blank">中国科学院大学（简称“国科大”）始建于1978年，其前身为中国科学院研究生院，2012年经教育部批准更名为中国科学院大学。国科大实行“科教融合”的办学方针，与中国科学院直属研究机构在管理体制、师资队伍、培养体系、科研工作等方面高度融合，是一所以研究生教育为主的独具特色的高等学校。</a>
+
+                    </p>
+
+
+                </div>
+                <div class="qh_con3xa">
+                    <h2>上海科技大学</h2>
+                    <a href="{{domain}}/shanghaitech/" target="_blank"><img
+                            src='{{domain}}/P020170411550885200979.jpg'/></a>
+                    <p style="line-height:26px;height:auto;">
+
+                        <a href="{{domain}}/shanghaitech/" target="_blank">上海科技大学（简称“上科大”），由上海市人民政府与中国科学院共同举办、共同建设，2013年经教育部正式批准。上科大秉持“服务国家发展战略，培养创新创业人才”的办学方针，实现科技与教育、科教与产业、科教与创业的融合，是一所小规模、高水平、国际化的研究型、创新型大学。</a>
+
+                    </p>
+
+
+                </div>
+                <div class="qh_con3xc">
+                    <h2><span>工作动态</span><a href="{{domain}}/rcjy/gz/">更多</a></h2>
+                    <ul>
+                        {% for i in random.sample(newst,10) %}
+                        <li>
+                            <a href="{{domain}}{{i['url'][1:]}}" title="{{i['title']}}"
+                               target="_blank">{{i['title']}}</a>
+                            <span>{{i['date']}}</span>
+                        </li>
+                        {% end %}
+                    </ul>
+                    <div class="qh_con3xcx">
+                        <div class="qh_con3xc1">
+                            <div id="qh_con3xc1x" class="qh_con3xc1x"><a href="{{domain}}/rcjy/zs/">更多</a></div>
+                            <dl>
+                                <dd class="now">招生信息</dd>
+                            </dl>
+                        </div>
+                        <div class="qh_con3xc2">
+                            <div>
+                                <div class="qh_con3xc2y">
+                                    <ul>
+                                        {% for i in random.sample(newst,10) %}
+                                        <li>
+                                            <a href="{{domain}}{{i['url'][1:]}}" title="{{i['title']}}" target="_blank">{{i['title']}}</a>
+                                            <span>{{i['date']}}</span>
+                                        </li>
+                                        {% end %}
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br class="clear"/>
+            </div>
+        </div>
+        <style type="text/css">
+            .qh_con4xa ul {
+                *margin-bottom: 0;
+            }
+
+            .qh_con4xd li {
+                *line-height: 26px;
+            }
+
+            .qh_con6xc li {
+                *line-height: 22px;
+            }
+        </style>
+
+        <div id=qh_con4 onMouseOver="mynav4.className='mynav4';mynav4.style.color='#10218b';"
+             onMouseOut="mynav4.className='';mynav4.style.color='';" style="DISPLAY: none" class="ctop3az">
+
+            <div class="qh_con4x">
+                <div class="qh_con4xa">
+                    <h2>学部组织</h2>
+                    <ul>
+                        {% for i in newst[24:29] %}
+                        <li><a href="{{domain}}{{i['url'][1:]}}" target="_blank"
+                               titlt="{{i['title']}}">{{i['title']}}</a></li>
+                        {% end %}
+                    </ul>
+                    <dl>
+                        <dd><a href="{{domain}}casad/doc/14972.html"><img src="{{domain}}/ch_gfa_03_2014.jpg"
+                                                                          width="214" height="46"/></a></dd>
+                        <dd><a href="{{domain}}casad/doc/14860.html"><img src="{{domain}}/ch_gfa_07_2014.jpg"
+                                                                          width="214" height="46"/></a></dd>
+                        <dd><a href="{{domain}}/zt/sszt/casad60/xblc/201505/t20150512_4354052.shtml"><img
+                                src="{{domain}}/ch_gfa_09_2014.jpg" width="214" height="46"/></a></dd>
+                    </dl>
+                </div>
+                <div class="qh_con4xb">
+                    <h2>院士信息</h2>
+                    <img src='{{domain}}/P020141016709171162540.jpg'/>
+                    <ul>
+                        <li class="qh_con4xbli1" style="margin-bottom:28px;"><a
+                                href="{{domain}}casad/chnl/371/index.html" target="_blank">全体院士名单</a></li>
+                        <li class="qh_con4xbli2" style="margin-bottom:28px;"><a
+                                href="{{domain}}casad/chnl/315/index.html" target="_blank">外籍院士名单</a></li>
+                        <li class="qh_con4xbli3" style="margin-bottom:28px;"><a href="{{domain}}/casad/doc/14959.html"
+                                                                                target="_blank">院士学部分布图</a></li>
+                        <li class="qh_con4xbli4" style="margin-bottom:0;"><a href="{{domain}}/casad/doc/14962.html"
+                                                                             target="_blank">年龄分布图</a></li>
+                    </ul>
+                </div>
+
+
+                <div class="qh_con4xc">
+                    <h2>院士大会</h2>
+                    <img src='{{domain}}/P0201410167093771010000.jpg'/>
+                    <ul>
+
+                        <li><a href="{{domain}}/zt/hyzt/ysdh18th/" target="_blank"
+                               title="中国科学院第十八次院士大会">中国科学院第十八次院士大会</a></li>
+
+                        <li><a href="{{domain}}/zt/hyzt/ysdh17th/" target="_blank"
+                               title="中国科学院第十七次院士大会">中国科学院第十七次院士大会</a></li>
+
+                        <li><a href="{{domain}}/zt/hyzt/16thysdh/" target="_blank"
+                               title="中国科学院第十六次院士大会">中国科学院第十六次院士大会</a></li>
+
+                        <li><a href="{{domain}}/zt/hyzt/zgkxydswcysdh/" target="_blank" title="中国科学院第十五次院士大会">中国科学院第十五次院士大会</a>
+                        </li>
+
+                        <li><a href="{{domain}}/zt/hyzt/zkyd14cysdh/" target="_blank" title="中国科学院第十四次院士大会">中国科学院第十四次院士大会</a>
+                        </li>
+
+                        <li><a href="{{domain}}/zt/jzt/yszt/zgkxydsscysdh/" target="_blank" title="中国科学院第十三次院士大会">中国科学院第十三次院士大会</a>
+                        </li>
+
+                        <li><a href="{{domain}}/xb/ysdh/200908/t20090810_2355203.shtml" target="_blank"
+                               title="中国科学院第十二次院士大会">中国科学院第十二次院士大会</a></li>
+
+                    </ul>
+                    <h3><a href="{{domain}}/xb/ysdh/" target="_blank">历次院士大会 >></a></h3>
+                </div>
+                <div class="qh_con4xd">
+                    <h2><a href="{{domain}}/xb/gz/"
+                           style="float:right;padding-left:15px;margin-right:10px;background: url({{domain}}/ch_kba_03_2014.jpg) no-repeat left; font-weight: 400; display:block;">更多</a><span>工作动态</span>
+                    </h2>
+                    <ul>
+                        {% for i in newst[30:40] %}
+                        <li>
+                            <a href="{{domain}}{{i['url'][1:]}}" title="{{i['title']}}"
+                               target="_blank">{{i['title']}}</a>
+                            <span>{{i['date']}}</span>
+                        </li>
+                        {% end %}
+                    </ul>
+                </div>
+                <br class="clear"/>
+            </div>
+        </div>
+        <div id=qh_con5 onMouseOver="mynav5.className='mynav1';mynav5.style.color='#10218b';"
+             onMouseOut="mynav5.className='';mynav5.style.color='';" style="DISPLAY: none" class="ctop3az">
+            <div class="qh_con5x">
+                <div class="qh_con5xa">
+                    <ul>
+                        <li><a href="{{domain}}/casisd/" target="_blank" title="科技战略咨询"><img
+                                src='{{domain}}/P020141016709977175197.jpg'/></a><a href="{{domain}}casisd.cn"
+                                                                                    target="_blank" title="科技战略咨询">科技战略咨询</a>
+                        </li>
+                        <li class="qh_con5xalix"><a href="{{domain}}casip/ac/cn/" target="_blank" title="知识产权网"><img
+                                src='{{domain}}/P020141016710135653310.jpg'/></a><a href="{{domain}}casip/ac/cn/"
+                                                                                    target="_blank"
+                                                                                    title="知识产权网">知识产权网</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="{{domain}}las/" target="_blank" title="文献检索"><img
+                                src='{{domain}}/P020141016710296935358.jpg'/></a><a href="{{domain}}lasaccn/"
+                                                                                    target="_blank"
+                                                                                    title="文献检索">文献检索</a></li>
+                        <li class="qh_con5xalix"><a href="{{domain}}castt/" target="_blank" title="科技产业网"><img
+                                src='{{domain}}/P020141016710455619936.jpg'/></a><a href="{{domain}}castt/ac/cn/"
+                                                                                    target="_blank"
+                                                                                    title="科技产业网">科技产业网</a></li>
+                    </ul>
+                    <ul class="qh_con5xaulx">
+                        <li><a href="{{domain}}ecas/" target="_blank" title="信息化工作网"><img
+                                src='{{domain}}/P020141016710628935212.jpg'/></a><a href="{{domain}}ecas.cas.cn/"
+                                                                                    target="_blank" title="信息化工作网">信息化工作网</a>
+                        </li>
+                        <li class="qh_con5xalix qh_con5xaliy"><a href="{{domain}}kjtj/" target="_blank"
+                                                                 title="科技条件信息平台"><img
+                                src='{{domain}}/P020141016710806418666.jpg'/></a><br class="clear"/><a
+                                href="{{domain}}kjtj/" target="_blank" title="科技条件信息平台">科技条件信息平台</a></li>
+                    </ul>
+                </div>
+                <div class="qh_con5xb">
+                    <h2>出版物</h2>
+                    <h3>期刊<a href="{{domain}}/zy/cb/qk/">更多</a></h3>
+
+                    <ul>
+                        <li><a href="{{domain}}/bulletin/" target="_blank"><img
+                                src="{{domain}}/W020170814535345374774.jpg" width="72" height="96"/></a></li>
+                        <li class="qh_con5xblix"><h4><a href="{{domain}}bulletin/" target="_blank" title="中国科学院院刊">中国科学院院刊</a>
+                        </h4>
+                            <p>《中国科学院院刊》（中文版）是中国科学院主办的以战略与决策研究为主的科技综...</p></li>
+                    </ul>
+
+                    <ul>
+                        <li><a href="{{domain}}/scichina/publisher/scp/journal/" target="_blank"><img
+                                src="{{domain}}/W020161222553063597215.jpg" width="72" height="96"/></a></li>
+                        <li class="qh_con5xblix"><h4><a href="{{domain}}/scichina/publisher/scp/journal/"
+                                                        target="_blank" title="科学通报">科学通报</a></h4>
+                            <p>《科学通报》是自然科学综合性学术刊物，力求及时报道自然科学各领域具有创新性...</p></li>
+                    </ul>
+
+                    <ul>
+                        <li><a href="{{domain}}/scichina/publications/" target="_blank"><img
+                                src="{{domain}}/W020161222553219254523.jpg" width="72" height="96"/></a></li>
+                        <li class="qh_con5xblix"><h4><a href="{{domain}}/scichina/publications/" target="_blank"
+                                                        title="中国科学">中国科学</a></h4>
+                            <p>覆盖数学、物理、化学、生命科学、地球科学、信息科学、技术科学与天文学等学科...</p></li>
+                    </ul>
+
+
+                    <div class="qh_con5xb1">
+                        <form name="frmPatent" method="post" action="{{domain}}/search/sourcedb/monograph/"
+                              onSubmit="return search_check2()">
+                            <input name="monograph_dwdm" type="hidden" id="monograph_dwdm" value=""/>
+                            <table width="100%" height="40" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td height="40"><span>专著检索</span></td>
+
+                                    <td>著作名称</td>
+                                    <td><input class="qh_con5xb1inputx" name="monograph_zzmc" id="monograph_zzmc"
+                                               type="text"/></td>
+                                    <td>主编名称</td>
+                                    <td><input class="qh_con5xb1inputx" name="monograph_zb" id="monograph_zb"
+                                               type="text"/></td>
+                                    <td><input name="imageField2" type="image" src="{{domain}}/ch_jop_03_2014.jpg"
+                                               id="imageField2"/></td>
+                                </tr>
+                            </table>
+
+                        </form>
+                    </div>
+                    <h3>电子杂志<a href="{{domain}}/zy/cb/dz/">更多</a></h3>
+
+                    <ul>
+                        <li><a href="{{domain}}/zkyzs/" target="_blank"><img src="{{domain}}/W020150817581800467963.jpg"
+                                                                             width="72" height="96"/></a></li>
+                        <li class="qh_con5xblix"><h4><a href="{{domain}}/zkyzs/" target="_blank" title="中科院之声电子杂志">中科院之声电子杂志</a>
+                        </h4>
+                            <p></p></li>
+                    </ul>
+
+                    <ul>
+                        <li><a href="{{domain}}/sciencenet/dz/add_user/" target="_blank"><img
+                                src="{{domain}}/W020090824405398177876.jpg" width="72" height="96"/></a></li>
+                        <li class="qh_con5xblix"><h4><a href="{{domain}}/sciencenet/dz/add_user/" target="_blank"
+                                                        title="科学网电子杂志">科学网电子杂志</a></h4>
+                            <p></p></li>
+                    </ul>
+
+                    <ul>
+                        <li><a href="{{domain}}/kepu/gb/ezine/index.html" target="_blank"><img
+                                src="{{domain}}/W020090824404835838486.jpg" width="72" height="96"/></a></li>
+                        <li class="qh_con5xblix"><h4><a href="{{domain}}/kepu/gb/ezine/index.html" target="_blank"
+                                                        title="科普博览电子杂志">科普博览电子杂志</a></h4>
+                            <p></p></li>
+                    </ul>
+
+                </div>
+                <br class="clear"/>
+            </div>
+        </div>
+        <div id=qh_con6 onMouseOver="mynav6.className='mynav1';mynav6.style.color='#10218b';"
+             onMouseOut="mynav6.className='';mynav6.style.color='';" style="DISPLAY: none" class="ctop3az">
+            <div class="qh_con6x">
+                <div class="qh_con6xa">
+
+                    <ul>
+                        <li class="qh_con6xalix"><a href="{{domain}}/kepu/gb/index.html" target="_blank"><img
+                                src="{{domain}}/ch_jgt_03_2014.jpg" width="190" height="49"/></a></li>
+                        <li><a href="{{domain}}/caskepu/gb/index.html" target="_blank"><img
+                                src="{{domain}}/ch_jgt_07_2014.jpg" width="221" height="59"/></a></li>
+                    </ul>
+                    <h2><span>科普场馆</span><a href="{{domain}}/kx/kp/">更多</a></h2>
+
+                    <dl>
+
+                        <dd><a href="{{domain}}/hf/kxcb/xdkjg/" target="_blank" title="中国科学院合肥物质科学研究院合肥现代科技馆">中国科学院合肥物质科学研究院合...</a>
+                        </dd>
+
+                        <dd><a href="{{domain}}kepu/gb/kpcg/bwg/bwg03.html" target="_blank" title="中国古动物馆">中国古动物馆</a>
+                        </dd>
+
+                        <dd><a href="{{domain}}xtbg/index.html" target="_blank" title="中国科学院西双版纳热带植物园热带雨林民族文化博物馆">中国科学院西双版纳热带植物园热...</a>
+                        </dd>
+
+                        <dd><a href="{{domain}}nmp/" target="_blank"
+                               title="中国科学院南京地质古生物研究所南京古生物博物馆">中国科学院南京地质古生物研究所...</a></dd>
+
+                        <dd><a href="{{domain}}kepu/gb/kpcg/bwg/bwg04.html" target="_blank" title="中国科学院动物研究所国家动物博物馆">中国科学院动物研究所国家动物博物馆</a>
+                        </dd>
+
+                        <dd><a href="{{domain}}shem/" target="_blank" title="中国科学院上海生命科学研究院植物生理生态研究所上海昆虫博物馆">中国科学院上海生命科学研究院植...</a>
+                        </dd>
+
+                        <dd><a href="{{domain}}kepu/gb/kpcg/bbg/bbg18.html" target="_blank"
+                               title="中国科学院新疆生态与地理研究所生物标本馆">中国科学院新疆生态与地理研究所...</a></dd>
+
+                    </dl>
+                </div>
+
+                <style type="text/css">
+                    .qh_con6xb li.qh_con5xbliy {
+                        padding: 8px 0 12px 11px;
+                    }
+                </style>
+
+                <div class="qh_con6xb">
+                    <h2><span>专题透视</span><a href="{{domain}}/kx/zt/">更多</a></h2>
+
+                    {% for i in newst[41:56] %}
+                    <ul>
+                        <li class="qh_con5xbliy"><a href="{{domain}}{{i['url'][1:]}}" target="_blank"><img
+                                src="{{i['img']}}" width="91" height="64"/></a></li>
+                        <li class="qh_con5xblix"><h4><a href="{{domain}}{{i['url'][1:]}}" target="_blank"
+                                                        title="{{i['title']}}">{{i['title']}}</a></h4>
+                            <p>{{i['title']}}</p></li>
+                    </ul>
+                    {% end %}
+
+                </div>
+                <div class="qh_con6xc">
+                    <h2><span>科普文章</span><a href="{{domain}}/kx/kpwz/">更多</a></h2>
+                    <ul>
+                        {% for i in newst[56:63] %}
+                        <li>
+                            <a href="{{domain}}{{i['url'][1:]}}" target="_blank"
+                               title="{{i['title']}}">{{i['title']}}</a>
+                            <span>{{i['date']}}</span>
+                        </li>
+                        {% end %}
+                    </ul>
+                    <h2><span>工作动态</span><a href="{{domain}}/kx/gz/">更多</a></h2>
+                    <ul class="qh_con6xculx">
+                        {% for i in newst[64:70] %}
+                        <li>
+                            <a href="{{domain}}{{i['url'][1:]}}" target="_blank"
+                               title="{{i['title']}}">{{i['title']}}</a>
+                            <span>{{i['date']}}</span>
+                        </li>
+                        {% end %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id=qh_con7 onMouseOver="mynav7.className='mynav7';mynav7.style.color='#10218b';"
+             onMouseOut="mynav7.className='';mynav7.style.color='';" style="DISPLAY: none" class="ctop3az">
+            <div class="qh_con7x">
+                <div class="qh_con7xa">
+                    <h2><span>工作动态</span><a href="{{domain}}/djcx/gz/">更多</a></h2>
+                    <ul>
+                        {% for i in newst[71:82] %}
+                        <li>
+                            <a href="{{domain}}{{i['url'][1:]}}" target="_blank"
+                               title="{{i['title']}}">{{i['title']}}</a>
+                            <span>{{i['date']}}</span>
+                        </li>
+                        {% end %}
+                    </ul>
+                    <a href="{{domain}}jgxfyd/" target="_blank"><img src='{{domain}}/P020170726370061664449.jpg'/></a>
+                </div>
+                <div class="qh_con7xb">
+                    <h2><span>反腐倡廉</span><a href="{{domain}}/djcx/ff/">更多</a></h2>
+                    <ul>
+
+                        {% for i in newst[83:94] %}
+                        <li>
+                            <a href="{{domain}}{{i['url'][1:]}}" target="_blank"
+                               title="{{i['title']}}">{{i['title']}}</a>
+                            <span>{{i['date']}}</span>
+                        </li>
+                        {% end %}
+                    </ul>
+                    <a href="{{domain}}/wjwfjb/" target="_blank"><img src='{{domain}}/P020141016711744189119.jpg'/></a>
+                </div>
+                <div class="qh_con7xc">
+                    <h2><span>文明天地</span><a href="{{domain}}/djcx/wm/">更多</a></h2>
+                    <ul>
+
+                        {% for i in newst[95:100] %}
+                        <li>
+                            <a href="{{domain}}{{i['url'][1:]}}" target="_blank"
+                               title="{{i['title']}}">{{i['title']}}</a>
+                            <span>{{i['date']}}</span>
+                        </li>
+                        {% end %}
+
+                    </ul>
+                    <h2>副刊专题</h2>
+                    <dl>
+
+                        <dd><img src='{{domain}}/P020141016714955287059.jpg'/>
+                            <span><a href="{{domain}}/djcx/fk/sg/" title="诗歌">诗歌</a></span>
+                        </dd>
+
+                        <dd><img src='{{domain}}/P020141016715097709954.jpg'/>
+                            <span><a href="{{domain}}/djcx/fk/sh/" title="书画">书画</a></span>
+                        </dd>
+
+                        <dd><img src='{{domain}}/P020141016715215742633.jpg'/>
+                            <span><a href="{{domain}}/djcx/fk/sy/" title="摄影">摄影</a></span>
+                        </dd>
+
+                        <dd><img src='{{domain}}/P020141016715319747217.jpg'/>
+                            <span><a href="{{domain}}/djcx/fk/sw/" title="散文">散文</a></span>
+                        </dd>
+
+                    </dl>
+                </div>
+            </div>
+        </div>
+
+        <style type="text/css">
+            .qh_con8xa h2 a, .qh_con8xb h2 a, .qh_con8xc h2 a {
+                color: #066ab0;
+                font-size: 20px;
+                font-family: "微软雅黑";
+            }
+
+            .hei20 {
+                font-family: "微软雅黑";
+                font-size: 20px;
+                color: #2b2b2b;
+                padding-bottom: 10px;
+            }
+
+            .scyhei20 {
+                background: url({{domain}}/ch_kpo_03_2014.jpg) no-repeat 20px;
+            }
+
+            .scyhei201 {
+                background: url({{domain}}/ch_kpo_03_2014.jpg) no-repeat 35px;
+            }
+
+            .scyhei202 {
+                background: url({{domain}}/ch_kpo_03_2014.jpg) no-repeat 38px;
+            }
+
+            .lan16_28 {
+                font-size: 16px;
+                color: #066ab0;
+                text-decoration: none;
+                font-family: "微软雅黑";
+                line-height: 28px;
+            }
+
+            a:hover {
+                text-decoration: underline;
+            }
+
+            .hui12_18h {
+                font-size: 12px;
+                line-height: 18px;
+                color: #313131;
+                text-decoration: none;
+            }
+
+            .scyxxgk1 {
+                background: url({{domain}}/ch_ipa_03_2014.jpg) no-repeat 20px;
+            }
+
+            .scyxxgk {
+                background: url({{domain}}/ch_ipa_03_2014.jpg) no-repeat;
+            }
+
+        </style>
+
+        <div id=qh_con8 onMouseOver="mynav8.className='mynav1';mynav8.style.color='#10218b';"
+             onMouseOut="mynav8.className='';mynav8.style.color='';" style="DISPLAY: none" class="ctop3az">
+            <div class="qh_con8x" style="padding-bottom:15px;">
+
+                <table width="987" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td width="239" height="358" align="center" valign="top">
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td width="56" align="right" valign="middle" class="scyhei20">&nbsp;</td>
+                                    <td width="283" align="left" valign="middle" class="hei20">信息公开工作信息</td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                    <td align="left" valign="top">
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <td width="107" align="left" valign="top" class="lan16_28">相关规定</td>
+                                            </tr>
+
+
+                                            <tr>
+                                                <td align="left" valign="top"><a
+                                                        href="{{domain}}/xxgkml/xxgkgzxx/xggd/glbf/" class="hui12_18h"
+                                                        target="_blank">信息公开管理办法</a></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td align="left" valign="top"><a
+                                                        href="{{domain}}/xxgkml/xxgkgzxx/xggd/xxgkzn/" class="hui12_18h"
+                                                        target="_blank">信息公开指南</a></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td align="left" valign="top"><a
+                                                        href="{{domain}}/xxgkml/xxgkgzxx/xggd/xxgkml/" class="hui12_18h"
+                                                        target="_blank">信息公开目录</a></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td align="left" valign="top"><a
+                                                        href="{{domain}}/xxgkml/xxgkgzxx/xggd/qtgd/" class="hui12_18h"
+                                                        target="_blank">其他规定</a></td>
+                                            </tr>
+
+
+                                        </table>
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0"
+                                               style="margin-top:27px">
+                                            <tr>
+                                                <td align="left" valign="top" class="lan16_28">组织机构</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td align="left" valign="top"><a
+                                                        href="{{domain}}/xxgkml/xxgkgzxx/zzjg/gzjg/" class="hui12_18h"
+                                                        target="_blank">工作机构</a></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td align="left" valign="top"><a
+                                                        href="{{domain}}/xxgkml/xxgkgzxx/zzjg/jdjg/" class="hui12_18h"
+                                                        target="_blank">监督机构</a></td>
+                                            </tr>
+
+
+                                        </table>
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0"
+                                               style="margin-top:30px">
+                                            <tr>
+                                                <td align="left" valign="top" class="lan16_28">年度报告</td>
+                                            </tr>
+
+
+                                            <tr>
+                                                <td align="left" valign="top"><a
+                                                        href="{{domain}}/xxgkml/xxgkgzxx/ndbg/ndbg/201803/t20180330_4640481.shtml"
+                                                        class="hui12_18h" target="_blank">2017年度报告</a></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td align="left" valign="top"><a
+                                                        href="{{domain}}/xxgkml/xxgkgzxx/ndbg/ndbg/201703/t20170327_4595143.shtml"
+                                                        class="hui12_18h" target="_blank">2016年度报告</a></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td align="left" valign="top"><a
+                                                        href="{{domain}}/xxgkml/xxgkgzxx/ndbg/ndbg/201603/t20160330_4551329.shtml"
+                                                        class="hui12_18h" target="_blank">2015年度报告</a></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td align="left" valign="top"><a
+                                                        href="{{domain}}/xxgkml/xxgkgzxx/ndbg/ndbg/201503/t20150309_4318972.shtml"
+                                                        class="hui12_18h" target="_blank">2014年度报告</a></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td align="left" valign="top"><a
+                                                        href="{{domain}}/xxgkml/xxgkgzxx/ndbg/ndbg/201404/t20140404_4086121.shtml"
+                                                        class="hui12_18h" target="_blank">2013年度报告</a></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td align="left" valign="top"><a
+                                                        href="{{domain}}/xxgkml/xxgkgzxx/ndbg/ndbg/201303/t20130315_3793929.shtml"
+                                                        class="hui12_18h" target="_blank">2012年度报告</a></td>
+                                            </tr>
+
+
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td width="330" align="center" valign="top">
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="scyxxgk">
+                                <tr>
+                                    <td width="54" align="right" valign="middle" class="scyhei201">&nbsp;</td>
+                                    <td colspan="2" align="left" valign="top" class="hei20">中国科学院学部</td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                    <td width="141" align="left" valign="top">
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <td width="107" align="left" valign="top" class="lan16_28">基本信息</td>
+                                            </tr>
+
+
+                                            <tr>
+                                                <td align="left" valign="top"><a
+                                                        href="{{domain}}/xxgkml/zgkxyxb/jbxx/xbgk/" class="hui12_18h"
+                                                        target="_blank">学部概况</a></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td align="left" valign="top"><a
+                                                        href="{{domain}}/xxgkml/zgkxyxb/jbxx/ysdh/" class="hui12_18h"
+                                                        target="_blank">院士大会</a></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td align="left" valign="top"><a
+                                                        href="{{domain}}/xxgkml/zgkxyxb/jbxx/ysxx/" class="hui12_18h"
+                                                        target="_blank">院士信息</a></td>
+                                            </tr>
+
+
+                                        </table>
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0"
+                                               style="margin-top:13px">
+                                            <tr>
+                                                <td align="left" valign="top" class="lan16_28">规章制度</td>
+                                            </tr>
+
+
+                                            <tr>
+                                                <td align="left" valign="top"><a
+                                                        href="{{domain}}/xxgkml/zgkxyxb/gzzd/yszc/" class="hui12_18h"
+                                                        target="_blank">院士章程</a></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td align="left" valign="top"><a
+                                                        href="{{domain}}/xxgkml/zgkxyxb/gzzd/zxgd/" class="hui12_18h"
+                                                        target="_blank">增选工作有关规定</a></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td align="left" valign="top"><a
+                                                        href="{{domain}}/xxgkml/zgkxyxb/gzzd/qtgzbf/" class="hui12_18h"
+                                                        target="_blank">其他工作规则与管理办法</a></td>
+                                            </tr>
+
+
+                                        </table>
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0"
+                                               style="margin-top:30px">
+                                            <tr>
+                                                <td align="left" valign="top" class="lan16_28">工作进展</td>
+                                            </tr>
+
+
+                                            <tr>
+                                                <td align="left" valign="top"><a
+                                                        href="{{domain}}/xxgkml/zgkxyxb/gzjz/yszx/" class="hui12_18h"
+                                                        target="_blank">院士增选</a></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td align="left" valign="top"><a
+                                                        href="{{domain}}/xxgkml/zgkxyxb/gzjz/zxpy/" class="hui12_18h"
+                                                        target="_blank">咨询评议</a></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td align="left" valign="top"><a
+                                                        href="{{domain}}/xxgkml/zgkxyxb/gzjz/xskp/" class="hui12_18h"
+                                                        target="_blank">学术科普</a></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td align="left" valign="top"><a
+                                                        href="{{domain}}/xxgkml/zgkxyxb/gzjz/gzdt/" class="hui12_18h"
+                                                        target="_blank">工作动态</a></td>
+                                            </tr>
+
+
+                                        </table>
+                                    </td>
+                                    <td width="135" align="left" valign="top">
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <td align="left" valign="top" class="lan16_28">学部出版物</td>
+                                            </tr>
+
+
+                                            <tr>
+                                                <td align="left" valign="top"><a
+                                                        href="{{domain}}/xxgkml/zgkxyxb/xbcbw/zxjc/" class="hui12_18h"
+                                                        target="_blank">咨询决策系列</a></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td align="left" valign="top"><a
+                                                        href="{{domain}}/xxgkml/zgkxyxb/xbcbw/xsyl/" class="hui12_18h"
+                                                        target="_blank">学术引领系列</a></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td align="left" valign="top"><a
+                                                        href="{{domain}}/xxgkml/zgkxyxb/xbcbw/kxwh/" class="hui12_18h"
+                                                        target="_blank">科学文化系列</a></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td align="left" valign="top"><a
+                                                        href="{{domain}}/xxgkml/zgkxyxb/xbcbw/qtcbw/" class="hui12_18h"
+                                                        target="_blank">其他出版物</a></td>
+                                            </tr>
+
+
+                                        </table>
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0"
+                                               style="margin-top:110px">
+                                            <tr>
+                                                <td align="left" valign="top" class="lan16_28">陈嘉庚科学奖</td>
+                                            </tr>
+
+
+                                            <tr>
+                                                <td align="left" valign="top"><a
+                                                        href="{{domain}}/xxgkml/zgkxyxb/cjgkxj/jggk/" class="hui12_18h"
+                                                        target="_blank">机构概况</a></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td align="left" valign="top"><a
+                                                        href="{{domain}}/xxgkml/zgkxyxb/cjgkxj/gzzd/" class="hui12_18h"
+                                                        target="_blank">规章制度</a></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td align="left" valign="top"><a
+                                                        href="{{domain}}/xxgkml/zgkxyxb/cjgkxj/tzgg/" class="hui12_18h"
+                                                        target="_blank">通知公告</a></td>
+                                            </tr>
+
+
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td width="418" align="center" valign="top">
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0" class="scyxxgk1">
+                                <tr>
+                                    <td width="56" align="right" valign="middle" class="scyhei202">&nbsp;</td>
+                                    <td colspan="3" align="left" valign="top" class="hei20">中国科学院院部</td>
+                                </tr>
+                                <tr>
+                                    <td>&nbsp;</td>
+                                    <td width="115" align="left" valign="top">
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <td align="left" valign="top" class="lan16_28">机构设置</td>
+                                            </tr>
+
+
+                                            <tr>
+                                                <td align="left" valign="top"><a
+                                                        href="{{domain}}/xxgkml/zgkxyyb/jgsz/jbqk/" class="hui12_18h"
+                                                        target="_blank">基本情况</a></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td align="left" valign="top"><a
+                                                        href="{{domain}}/xxgkml/zgkxyyb/jgsz/yldjt/" class="hui12_18h"
+                                                        target="_blank">院领导集体</a></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td align="left" valign="top"><a
+                                                        href="{{domain}}/xxgkml/zgkxyyb/jgsz/zzjg/" class="hui12_18h"
+                                                        target="_blank">组织机构</a></td>
+                                            </tr>
+
+
+                                        </table>
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0"
+                                               style="margin-top:11px">
+                                            <tr>
+                                                <td align="left" valign="top" class="lan16_28">财政经费</td>
+                                            </tr>
+
+
+                                            <tr>
+                                                <td align="left" valign="top"><a
+                                                        href="{{domain}}/xxgkml/zgkxyyb/czjf/ysjs/" class="hui12_18h"
+                                                        target="_blank">预算决算</a></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td align="left" valign="top"><a
+                                                        href="{{domain}}/xxgkml/zgkxyyb/czjf/zdjjxm/" class="hui12_18h"
+                                                        target="_blank">重大基建项目</a></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td align="left" valign="top"><a
+                                                        href="{{domain}}/xxgkml/zgkxyyb/czjf/zdcg/" class="hui12_18h"
+                                                        target="_blank">重大采购</a></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td align="left" valign="top"><a
+                                                        href="{{domain}}/xxgkml/zgkxyyb/czjf/yjxm/" class="hui12_18h"
+                                                        target="_blank">院级项目</a></td>
+                                            </tr>
+
+
+                                        </table>
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0"
+                                               style="margin-top:15px">
+                                            <tr>
+                                                <td align="left" valign="top" class="lan16_28">国际合作</td>
+                                            </tr>
+
+
+                                            <tr>
+                                                <td align="left" valign="top"><a
+                                                        href="{{domain}}/xxgkml/zgkxyyb/gjhz/gjzz/" class="hui12_18h"
+                                                        target="_blank">国际组织</a></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td align="left" valign="top"><a
+                                                        href="{{domain}}/xxgkml/zgkxyyb/gjhz/gjhy/" class="hui12_18h"
+                                                        target="_blank">国际会议</a></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td align="left" valign="top"><a
+                                                        href="{{domain}}/xxgkml/zgkxyyb/gjhz/gjjl/" class="hui12_18h"
+                                                        target="_blank">国际奖励</a></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td align="left" valign="top"><a
+                                                        href="{{domain}}/xxgkml/zgkxyyb/gjhz/gjjxj/" class="hui12_18h"
+                                                        target="_blank">国际奖学金</a></td>
+                                            </tr>
+
+
+                                        </table>
+                                    </td>
+                                    <td width="111" align="left" valign="top">
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <td align="left" valign="top" class="lan16_28">规章制度</td>
+                                            </tr>
+
+
+                                            <tr>
+                                                <td align="left" valign="top"><a
+                                                        href="{{domain}}/xxgkml/zgkxyyb/gzzd/zkyzc/" class="hui12_18h"
+                                                        target="_blank">中国科学院章程</a></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td align="left" valign="top"><a
+                                                        href="{{domain}}/xxgkml/zgkxyyb/gzzd/jggl/" class="hui12_18h"
+                                                        target="_blank">机构管理</a></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td align="left" valign="top"><a
+                                                        href="{{domain}}/xxgkml/zgkxyyb/gzzd/kyhd/" class="hui12_18h"
+                                                        target="_blank">科研活动管理</a></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td align="left" valign="top"><a
+                                                        href="{{domain}}/xxgkml/zgkxyyb/gzzd/rlzy/" class="hui12_18h"
+                                                        target="_blank">人力资源管理</a></td>
+                                            </tr>
+
+
+                                        </table>
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0"
+                                               style="margin-top:13px">
+                                            <tr>
+                                                <td align="left" valign="top" class="lan16_28">人事人才</td>
+                                            </tr>
+
+
+                                            <tr>
+                                                <td align="left" valign="top"><a
+                                                        href="{{domain}}/xxgkml/zgkxyyb/rsrc/rsrm/" class="hui12_18h"
+                                                        target="_blank">人事任免</a></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td align="left" valign="top"><a
+                                                        href="{{domain}}/xxgkml/zgkxyyb/rsrc/rczx/" class="hui12_18h"
+                                                        target="_blank">人才专项</a></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td align="left" valign="top"><a
+                                                        href="{{domain}}/xxgkml/zgkxyyb/rsrc/rczp/" class="hui12_18h"
+                                                        target="_blank">人才招聘</a></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td align="left" valign="top"><a
+                                                        href="{{domain}}/xxgkml/zgkxyyb/rsrc/zsypy/" class="hui12_18h"
+                                                        target="_blank">招生与培养</a></td>
+                                            </tr>
+
+
+                                        </table>
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0"
+                                               style="margin-top:14px">
+                                            <tr>
+                                                <td align="left" valign="top" class="lan16_28">科学传播</td>
+                                            </tr>
+
+
+                                            <tr>
+                                                <td align="left" valign="top"><a
+                                                        href="{{domain}}/xxgkml/zgkxyyb/kxpj/kpzy/" class="hui12_18h"
+                                                        target="_blank">科普资源</a></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td align="left" valign="top"><a
+                                                        href="{{domain}}/xxgkml/zgkxyyb/kxpj/kpzs/" class="hui12_18h"
+                                                        target="_blank">科普知识</a></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td align="left" valign="top"><a
+                                                        href="{{domain}}/xxgkml/zgkxyyb/kxpj/wzjs/" class="hui12_18h"
+                                                        target="_blank">网站建设</a></td>
+                                            </tr>
+
+
+                                        </table>
+                                    </td>
+                                    <td width="136" align="left" valign="top">
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <td align="left" valign="top" class="lan16_28">发展规划</td>
+                                            </tr>
+
+
+                                            <tr>
+                                                <td align="left" valign="top"><a
+                                                        href="{{domain}}/xxgkml/zgkxyyb/fzgh/ztgh/" class="hui12_18h"
+                                                        target="_blank">院总体规划</a></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td align="left" valign="top"><a
+                                                        href="{{domain}}/xxgkml/zgkxyyb/fzgh/zxgh/" class="hui12_18h"
+                                                        target="_blank">专项规划</a></td>
+                                            </tr>
+
+
+                                        </table>
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0"
+                                               style="margin-top:13px">
+                                            <tr>
+                                                <td align="left" valign="top" class="lan16_28">科学研究</td>
+                                            </tr>
+
+
+                                            <tr>
+                                                <td align="left" valign="top"><a
+                                                        href="{{domain}}/xxgkml/zgkxyyb/kxyj/kycxdy/" class="hui12_18h"
+                                                        target="_blank">科研创新单元</a></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td align="left" valign="top"><a
+                                                        href="{{domain}}/xxgkml/zgkxyyb/kxyj/kyzb/" class="hui12_18h"
+                                                        target="_blank">科研装备</a></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td align="left" valign="top"><a
+                                                        href="{{domain}}/xxgkml/zgkxyyb/kxyj/xdzx/" class="hui12_18h"
+                                                        target="_blank">先导专项</a></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td align="left" valign="top"><a
+                                                        href="{{domain}}/xxgkml/zgkxyyb/kxyj/kyjz/" class="hui12_18h"
+                                                        target="_blank">科研进展</a></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td align="left" valign="top"><a
+                                                        href="{{domain}}/xxgkml/zgkxyyb/kxyj/kycg/" class="hui12_18h"
+                                                        target="_blank">科研成果</a></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td align="left" valign="top"><a
+                                                        href="{{domain}}/xxgkml/zgkxyyb/kxyj/cgzh_/" class="hui12_18h"
+                                                        target="_blank">成果转化</a></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td align="left" valign="top"><a
+                                                        href="{{domain}}/xxgkml/zgkxyyb/kxyj/kjjl/" class="hui12_18h"
+                                                        target="_blank">科技奖励</a></td>
+                                            </tr>
+
+
+                                        </table>
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0"
+                                               style="margin-top:13px">
+                                            <tr>
+                                                <td align="left" valign="top" class="lan16_28">年度统计与出版物</td>
+                                            </tr>
+
+
+                                            <tr>
+                                                <td align="left" valign="top"><a
+                                                        href="{{domain}}/xxgkml/zgkxyyb/tjcbw/ndtj/" class="hui12_18h"
+                                                        target="_blank">年度统计</a></td>
+                                            </tr>
+
+                                            <tr>
+                                                <td align="left" valign="top"><a
+                                                        href="{{domain}}/xxgkml/zgkxyyb/tjcbw/cbw/" class="hui12_18h"
+                                                        target="_blank">出版物</a></td>
+                                            </tr>
+
+
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+
+
+            </div>
+        </div>
+        <div id=qh_con9 onMouseOver="mynav9.className='mynav9';mynav9.style.color='#10218b';"
+             onMouseOut="mynav9.className='';mynav9.style.color='';" style="DISPLAY: none" class="ctop3az">
+            <div class="qh_con9x">
+                <div class="qh_con9xa">
+                    <div class="qh_con9xa1">
+                        <dl>
+                            <dt>年度专题</dt>
+                            <dd><a href="{{domain}}/zt/2018nzt/" class="now" id="two1" onMouseOver="setTab('two',1,6);">2018</a>
+                            </dd>
+                            <dd><a href="{{domain}}/zt/2017nzt/" id="two2" onMouseOver="setTab('two',2,6);">2017</a>
+                            </dd>
+                            <dd><a href="{{domain}}/zt/2016nzt/" id="two3" onMouseOver="setTab('two',3,6);">2016</a>
+                            </dd>
+                            <dd><a href="{{domain}}/zt/2015nzt/" id="two4" onMouseOver="setTab('two',4,6);">2015</a>
+                            </dd>
+                            <dd><a href="{{domain}}/zt/2014nzt/" id="two5" onMouseOver="setTab('two',5,6);">2014</a>
+                            </dd>
+                            <dd><a href="{{domain}}/zt/2013nzt/" id="two6" onMouseOver="setTab('two',6,6);">2013</a>
+                            </dd>
+                        </dl>
+                        <span><a href="{{domain}}/zt1/">更多</a></span>
+                    </div>
+                    <div class="qh_con9xa2">
+                        <div id="two_con1">
+                            <div class="qh_con9xa2x">
+                                <ul>
+                                    {% for i in random.sample(newst,8) %}
+                                    <li style="height:38px;">
+                                        <a href="{{domain}}{{i['url'][1:]}}" target="_blank"><img src="{{i['img']}}"
+                                                                                                  width="139"
+                                                                                                  height="38"/></a>
+                                    </li>
+                                    {% end %}
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div id="two_con2" style="display:none;">
+                            <div class="qh_con9xa2x">
+                                <ul>
+
+                                    {% for i in random.sample(newst,11) %}
+                                    <li style="height:38px;">
+                                        <a href="{{domain}}{{i['url'][1:]}}" target="_blank"><img src="{{i['img']}}"
+                                                                                                  width="139"
+                                                                                                  height="38"/></a>
+                                    </li>
+                                    {% end %}
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div id="two_con3" style="display:none;">
+                            <div class="qh_con9xa2x">
+                                <ul>
+
+                                    {% for i in random.sample(newst,15) %}
+                                    <li style="height:38px;">
+                                        <a href="{{domain}}{{i['url'][1:]}}" target="_blank"><img src="{{i['img']}}"
+                                                                                                  width="139"
+                                                                                                  height="38"/></a>
+                                    </li>
+                                    {% end %}
+
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div id="two_con4" style="display:none;">
+                            <div class="qh_con9xa2x">
+                                <ul>
+                                    {% for i in random.sample(newst,15) %}
+                                    <li style="height:38px;">
+                                        <a href="{{domain}}{{i['url'][1:]}}" target="_blank">
+                                            <img src="{{i['img']}}" width="139" height="38"/>
+                                        </a>
+                                    </li>
+                                    {% end %}
+                                </ul>
+                            </div>
+                        </div>
+                        <div id="two_con5" style="display:none;">
+                            <div class="qh_con9xa2x">
+                                <ul>
+
+                                    {% for i in random.sample(newst,15) %}
+                                    <li style="height:38px;">
+                                        <a href="{{domain}}{{i['url'][1:]}}" target="_blank">
+                                            <img src="{{i['img']}}" width="139" height="38"/>
+                                        </a>
+                                    </li>
+                                    {% end %}
+
+                                </ul>
+                            </div>
+
+                        </div>
+                        <div id="two_con6" style="display:none;">
+                            <div class="qh_con9xa2x">
+                                <ul>
+
+                                    {% for i in random.sample(newst,20) %}
+                                    <li style="height:38px;">
+                                        <a href="{{domain}}{{i['url'][1:]}}" target="_blank">
+                                            <img src="{{i['img']}}" width="139" height="38"/>
+                                        </a>
+                                    </li>
+                                    {% end %}
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="qh_con9xb">
+                    <ul>
+                        <li class="qh_con9xbli1"><a href="{{domain}}/zt/kjzt/">科技专题</a></li>
+                        <li class="qh_con9xbli2"><a href="{{domain}}/zt/sszt/">时事专题</a></li>
+                        <li class="qh_con9xbli3"><a href="{{domain}}/zt/rwzt/">人物专题</a></li>
+                        <li class="qh_con9xbli4"><a href="{{domain}}/zt/hyzt/">会议专题</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
-<div id=qh_con6 onMouseOver="mynav6.className='mynav1';mynav6.style.color='#10218b';" onMouseOut="mynav6.className='';mynav6.style.color='';" style="DISPLAY: none" class="ctop3az">
-	<div class="qh_con6x">
-    	<div class="qh_con6xa">
 
-        	<ul>
-            	<li class="qh_con6xalix"><a href="{{domain}}/kepu/gb/index.html" target="_blank"><img src="{{domain}}/ch_jgt_03_2014.jpg" width="190" height="49" /></a></li>
-                <li><a href="{{domain}}/caskepu/gb/index.html" target="_blank"><img src="{{domain}}/ch_jgt_07_2014.jpg" width="221" height="59" /></a></li>
+<div class="cztxxa">
+    <ul>
+        <li class="cztxxalix"><a href="{{domain}}/" class="CurrChnlCls">首页</a>&nbsp;>&nbsp;<a href="../../"
+                                                                                              class="CurrChnlCls">科学普及</a>&nbsp;>&nbsp;<a
+                href="../" class="CurrChnlCls">科普文章</a></li>
+    </ul>
+</div>
+
+<style type="text/css">
+    .cztxxb1 img {
+        padding: 0;
+    }
+</style>
+
+
+<div class="cztxxb">
+    <div class="cztxxb1">
+
+        <div class="cztxxb1y">
+            <h3 style="padding-top:14px">{{data['title']}}</h3>
+            <h4 id="cztxxb1yh4" style="display:none"></h4>
+        </div>
+        <div class="cztxxb1z">
+            <!--分享-->
+            <div class="bshare-custom"
+                 style="background:#fff;width:90px;border:1px solid #e5e5e5;padding:6px 0 6px 4px;position:absolute;top:12px;left:580px;">
+                <span style="color:#077fd3; cursor:pointer;background:url({{domain}}/ch_ld_xl_xxtu_03_2014.png) no-repeat right;"
+                      title="分享到" href="http://www.bshare.cn/share" id="bshare-shareto" class="">我要分享 &nbsp;</span><br/>
+
+                <div id="ld_fxhide" style="display:none;padding-top:10px;">
+                    <a style="margin-bottom:8px;color:#595959;font-weight:bold;" title="分享到新浪微博"
+                       class="bshare-sinaminiblog">新浪微博</a><br/>
+                    <a style="margin-bottom:8px;color:#595959;font-weight:bold;" title="分享到微信"
+                       class="bshare-weixin">微信</a><br/>
+                    <a style="margin-bottom:8px;color:#595959;font-weight:bold;" title="分享到QQ好友" class="bshare-qqim">QQ好友</a><br/>
+                    <a style="margin-bottom:8px;color:#595959;font-weight:bold;" title="分享到人人"
+                       class="bshare-renren">人人网</a><br/>
+
+                    <!-- 在这里添加更多平台 -->
+                    <!--<a title="更多平台" id="bshare-more-icon" class="bshare-more">更多...</a>-->
+                </div>
+            </div>
+            <script>
+                $(function () {
+                    $("#bshare-shareto").mouseover(function () {
+                        $("#ld_fxhide").slideDown();
+                    });
+                });
+                $(function () {
+                    $(".bshare-custom").mouseleave(function () {
+                        $("#ld_fxhide").slideUp();
+                    });
+
+                });
+
+
+            </script>
+            <script type="text/javascript" charset="utf-8"
+                    src="http://static.bshare.cn/b/buttonLite.js#uuid=<你的UUID>&style=-1"></script>
+            <script type="text/javascript" charset="utf-8" src="{{domain}}/bshareC1.js"></script>
+
+
+            <script type="text/javascript">
+                $(function () {
+                    var source = '{{data['
+                    shit
+                    ']}} {{data['
+                    keyword
+                    ']}}';
+                    if (source == '') {
+                        document.getElementById("source").style.display = "none";
+                    }
+                });
+            </script>
+
+
+            <!--分享-->
+            <p><span id="source">文章来源：<span>{{data['shit']}}</span>&nbsp;&nbsp;&nbsp;&nbsp;</span>发布时间：<span>{{data['date']}}</span>&nbsp;&nbsp;<span>【字号：&nbsp;<a
+                    style="color:#077fd3;" href="javascript:ztdxa(12);">小</a>&nbsp;&nbsp;<a style="color:#077fd3;"
+                                                                                            href="javascript:ztdxa(14);">中</a>&nbsp;&nbsp;<a
+                    style="color:#077fd3;" href="javascript:ztdxa(16);">大</a>&nbsp;】</span></p>
+        </div>
+        <div id="cztxxb1x" class="cztxxb1x" style="margin-top:15px;">
+            <style type="text/css">.TRS_Editor P {
+                margin-top: 0px;
+                margin-bottom: 12px;
+                line-height: 1.8;
+                font-family: 宋体;
+                font-size: 10.5pt;
+            }
+
+            .TRS_Editor DIV {
+                margin-top: 0px;
+                margin-bottom: 12px;
+                line-height: 1.8;
+                font-family: 宋体;
+                font-size: 10.5pt;
+            }
+
+            .TRS_Editor TD {
+                margin-top: 0px;
+                margin-bottom: 12px;
+                line-height: 1.8;
+                font-family: 宋体;
+                font-size: 10.5pt;
+            }
+
+            .TRS_Editor TH {
+                margin-top: 0px;
+                margin-bottom: 12px;
+                line-height: 1.8;
+                font-family: 宋体;
+                font-size: 10.5pt;
+            }
+
+            .TRS_Editor SPAN {
+                margin-top: 0px;
+                margin-bottom: 12px;
+                line-height: 1.8;
+                font-family: 宋体;
+                font-size: 10.5pt;
+            }
+
+            .TRS_Editor FONT {
+                margin-top: 0px;
+                margin-bottom: 12px;
+                line-height: 1.8;
+                font-family: 宋体;
+                font-size: 10.5pt;
+            }
+
+            .TRS_Editor UL {
+                margin-top: 0px;
+                margin-bottom: 12px;
+                line-height: 1.8;
+                font-family: 宋体;
+                font-size: 10.5pt;
+            }
+
+            .TRS_Editor LI {
+                margin-top: 0px;
+                margin-bottom: 12px;
+                line-height: 1.8;
+                font-family: 宋体;
+                font-size: 10.5pt;
+            }
+
+            .TRS_Editor A {
+                margin-top: 0px;
+                margin-bottom: 12px;
+                line-height: 1.8;
+                font-family: 宋体;
+                font-size: 10.5pt;
+            }</style>
+            <div class=TRS_Editor>
+                <style type="text/css">
+
+                    .TRS_Editor P {
+                        margin-top: 0px;
+                        margin-bottom: 12px;
+                        line-height: 1.8;
+                        font-family: 宋体;
+                        font-size: 10.5pt;
+                    }
+
+                    .TRS_Editor DIV {
+                        margin-top: 0px;
+                        margin-bottom: 12px;
+                        line-height: 1.8;
+                        font-family: 宋体;
+                        font-size: 10.5pt;
+                    }
+
+                    .TRS_Editor TD {
+                        margin-top: 0px;
+                        margin-bottom: 12px;
+                        line-height: 1.8;
+                        font-family: 宋体;
+                        font-size: 10.5pt;
+                    }
+
+                    .TRS_Editor TH {
+                        margin-top: 0px;
+                        margin-bottom: 12px;
+                        line-height: 1.8;
+                        font-family: 宋体;
+                        font-size: 10.5pt;
+                    }
+
+                    .TRS_Editor SPAN {
+                        margin-top: 0px;
+                        margin-bottom: 12px;
+                        line-height: 1.8;
+                        font-family: 宋体;
+                        font-size: 10.5pt;
+                    }
+
+                    .TRS_Editor FONT {
+                        margin-top: 0px;
+                        margin-bottom: 12px;
+                        line-height: 1.8;
+                        font-family: 宋体;
+                        font-size: 10.5pt;
+                    }
+
+                    .TRS_Editor UL {
+                        margin-top: 0px;
+                        margin-bottom: 12px;
+                        line-height: 1.8;
+                        font-family: 宋体;
+                        font-size: 10.5pt;
+                    }
+
+                    .TRS_Editor LI {
+                        margin-top: 0px;
+                        margin-bottom: 12px;
+                        line-height: 1.8;
+                        font-family: 宋体;
+                        font-size: 10.5pt;
+                    }
+
+                    .TRS_Editor A {
+                        margin-top: 0px;
+                        margin-bottom: 12px;
+                        line-height: 1.8;
+                        font-family: 宋体;
+                        font-size: 10.5pt;
+                    }</style>
+                <div>
+                    {% for i in data['content'] %}
+                    <p>{{i}}</p>
+                    {% end %}
+
+                </div>
+            </div>
+            <br/><br/><br/>
+            <div style="float:right">
+                <span style="text-align:right; color:#999; padding-right:25px;">（责任编辑：{{data['keyword']}}）</span></div>
+            <div style="margin:0 0 20px 15px;" class="scyxlfj">
+                <h3 id="scy_xlfj" style="margin-bottom:10px; font-size:16px; font-family:" 微软雅黑";">附件：</h3>
+                <ul>
+
+                </ul>
+            </div>
+
+        </div>
+
+
+    </div>
+    <div class="cztxxb2">
+        <style type="text/css">
+
+            .TRS_Editor P {
+                margin-top: 0px;
+                margin-bottom: 12px;
+                line-height: 1.8;
+                font-size: 10.5pt;
+            }
+
+            .TRS_Editor DIV {
+                margin-top: 0px;
+                margin-bottom: 12px;
+                line-height: 1.8;
+                font-size: 10.5pt;
+            }
+
+            .TRS_Editor TD {
+                margin-top: 0px;
+                margin-bottom: 12px;
+                line-height: 1.8;
+                font-size: 10.5pt;
+            }
+
+            .TRS_Editor TH {
+                margin-top: 0px;
+                margin-bottom: 12px;
+                line-height: 1.8;
+                font-size: 10.5pt;
+            }
+
+            .TRS_Editor SPAN {
+                margin-top: 0px;
+                margin-bottom: 12px;
+                line-height: 1.8;
+                font-size: 10.5pt;
+            }
+
+            .TRS_Editor FONT {
+                margin-top: 0px;
+                margin-bottom: 12px;
+                line-height: 1.8;
+                font-size: 10.5pt;
+            }
+
+            .TRS_Editor UL {
+                margin-top: 0px;
+                margin-bottom: 12px;
+                line-height: 1.8;
+                font-size: 10.5pt;
+            }
+
+            .TRS_Editor LI {
+                margin-top: 0px;
+                margin-bottom: 12px;
+                line-height: 1.8;
+                font-size: 10.5pt;
+            }
+
+            .TRS_Editor A {
+                margin-top: 0px;
+                margin-bottom: 12px;
+                line-height: 1.8;
+                font-size: 10.5pt;
+                color: #36F
+            }</style>
+
+        <div class="cztxxb2a">
+            <h2>热点新闻</h2>
+
+
+            <ul>
+                {% for i in random.sample(newst,5) %}
+                <li class="cztxxb2ali1"><a href="{{domain}}{{i['url'][1:]}}" target="_blank"
+                                           style="font-size:16px; color:#bb0404; font-weight:bold;"
+                                           title="{{i['title']}}">{{i['title']}}</a></li>
+                {% end %}
+
             </ul>
-            <h2><span>科普场馆</span><a href="{{domain}}/kx/kp/">更多</a></h2>
 
             <dl>
-            	
-                	<dd><a href="{{domain}}/hf/kxcb/xdkjg/" target="_blank" title="中国科学院合肥物质科学研究院合肥现代科技馆">中国科学院合肥物质科学研究院合...</a></dd>
-                
-                	<dd><a href="{{domain}}kepu/gb/kpcg/bwg/bwg03.html" target="_blank" title="中国古动物馆">中国古动物馆</a></dd>
-                
-                	<dd><a href="{{domain}}xtbg/index.html" target="_blank" title="中国科学院西双版纳热带植物园热带雨林民族文化博物馆">中国科学院西双版纳热带植物园热...</a></dd>
-                
-                	<dd><a href="{{domain}}nmp/" target="_blank" title="中国科学院南京地质古生物研究所南京古生物博物馆">中国科学院南京地质古生物研究所...</a></dd>
-                
-                	<dd><a href="{{domain}}kepu/gb/kpcg/bwg/bwg04.html" target="_blank" title="中国科学院动物研究所国家动物博物馆">中国科学院动物研究所国家动物博物馆</a></dd>
-                
-                	<dd><a href="{{domain}}shem/" target="_blank" title="中国科学院上海生命科学研究院植物生理生态研究所上海昆虫博物馆">中国科学院上海生命科学研究院植...</a></dd>
-                
-                	<dd><a href="{{domain}}kepu/gb/kpcg/bbg/bbg18.html" target="_blank" title="中国科学院新疆生态与地理研究所生物标本馆">中国科学院新疆生态与地理研究所...</a></dd>
-                
-          	</dl>
-        </div>
-
-<style type="text/css">
-.qh_con6xb li.qh_con5xbliy{padding:8px 0 12px 11px;}
-</style>
-
-<div class="qh_con6xb">
-  <h2><span>专题透视</span><a href="{{domain}}/kx/zt/">更多</a></h2>
-
-   {% for i in newst[41:56] %}
-    <ul>
-       	<li class="qh_con5xbliy"><a href="{{domain}}{{i['url'][1:]}}" target="_blank"><img src="{{i['img']}}" width="91" height="64" /></a></li>
-        <li class="qh_con5xblix"><h4><a href="{{domain}}{{i['url'][1:]}}" target="_blank" title="{{i['title']}}">{{i['title']}}</a></h4><p>{{i['title']}}</p></li>
-    </ul>
-   {% end %}
-
-  </div>
-        <div class="qh_con6xc">
-        	<h2><span>科普文章</span><a href="{{domain}}/kx/kpwz/">更多</a></h2>
-          <ul>
-                {% for i in newst[56:63] %}	
-                    <li>
-                    	<a href="{{domain}}{{i['url'][1:]}}" target="_blank" title="{{i['title']}}">{{i['title']}}</a>
-                        <span>{{i['date']}}</span>
-                    </li>
-                {% end %}
-          </ul>
-          <h2><span>工作动态</span><a href="{{domain}}/kx/gz/">更多</a></h2>
-          <ul class="qh_con6xculx">
-                {% for i in newst[64:70] %}
-                	<li>
-                    	<a href="{{domain}}{{i['url'][1:]}}" target="_blank" title="{{i['title']}}">{{i['title']}}</a>
-                        <span>{{i['date']}}</span>
-                    </li>
-		            {% end %}
-          </ul>
-        </div>
-    </div>
-</div>
-<div id=qh_con7 onMouseOver="mynav7.className='mynav7';mynav7.style.color='#10218b';" onMouseOut="mynav7.className='';mynav7.style.color='';" style="DISPLAY: none" class="ctop3az">
-	<div class="qh_con7x">
-   	  <div class="qh_con7xa">
-        	<h2><span>工作动态</span><a href="{{domain}}/djcx/gz/">更多</a></h2>
-       	<ul>
-                {% for i in newst[71:82] %}
-                	<li>
-                    	<a href="{{domain}}{{i['url'][1:]}}" target="_blank" title="{{i['title']}}">{{i['title']}}</a>
-                        <span>{{i['date']}}</span>
-                    </li>
-                {% end %}
-	    </ul>
-       	 <a href="{{domain}}jgxfyd/" target="_blank"><img src='{{domain}}/P020170726370061664449.jpg'/></a>        
-        </div>
-      <div class="qh_con7xb">
-        	<h2><span>反腐倡廉</span><a href="{{domain}}/djcx/ff/">更多</a></h2>
-       	<ul>
-          
-                {% for i in newst[83:94] %}
-                	<li>
-                    	<a href="{{domain}}{{i['url'][1:]}}" target="_blank" title="{{i['title']}}">{{i['title']}}</a>
-                        <span>{{i['date']}}</span>
-                    </li>
-                {% end %}
-        </ul>
-       	<a href="{{domain}}/wjwfjb/" target="_blank"><img src='{{domain}}/P020141016711744189119.jpg'/></a>        
-     </div>
-        <div class="qh_con7xc">
-        	<h2><span>文明天地</span><a href="{{domain}}/djcx/wm/">更多</a></h2>
-       	<ul>
-          
-                {% for i in newst[95:100] %}
-                	<li>
-                    	<a href="{{domain}}{{i['url'][1:]}}" target="_blank" title="{{i['title']}}">{{i['title']}}</a>
-                        <span>{{i['date']}}</span>
-                    </li>
-                {% end %}
-
-        </ul>
-        <h2>副刊专题</h2>
-        <dl>
-        
-        	<dd><img src='{{domain}}/P020141016714955287059.jpg'/>
-            	<span><a href="{{domain}}/djcx/fk/sg/" title="诗歌">诗歌</a></span>
-            </dd>
-        
-        	<dd><img src='{{domain}}/P020141016715097709954.jpg'/>
-            	<span><a href="{{domain}}/djcx/fk/sh/" title="书画">书画</a></span>
-            </dd>
-        
-        	<dd><img src='{{domain}}/P020141016715215742633.jpg'/>
-            	<span><a href="{{domain}}/djcx/fk/sy/" title="摄影">摄影</a></span>
-            </dd>
-        
-        	<dd><img src='{{domain}}/P020141016715319747217.jpg'/>
-            	<span><a href="{{domain}}/djcx/fk/sw/" title="散文">散文</a></span>
-            </dd>
-        
-        </dl>
-        </div>
-    </div>
-</div>
-
-<style type="text/css">
-.qh_con8xa h2 a,.qh_con8xb h2 a,.qh_con8xc h2 a{color: #066ab0; font-size: 20px; font-family: "微软雅黑";}
-
-.hei20{font-family:"微软雅黑"; font-size:20px; color:#2b2b2b; padding-bottom:10px;}
-.scyhei20{background:url({{domain}}/ch_kpo_03_2014.jpg) no-repeat 20px;}
-.scyhei201{background:url({{domain}}/ch_kpo_03_2014.jpg) no-repeat 35px;}
-.scyhei202{background:url({{domain}}/ch_kpo_03_2014.jpg) no-repeat 38px;}
-
-.lan16_28{font-size:16px; color:#066ab0; text-decoration:none; font-family:"微软雅黑"; line-height:28px;}
-a:hover{text-decoration:underline;}
-.hui12_18h{font-size:12px; line-height:18px; color:#313131; text-decoration:none;}
-.scyxxgk1{background:url({{domain}}/ch_ipa_03_2014.jpg) no-repeat 20px;}
-.scyxxgk{background:url({{domain}}/ch_ipa_03_2014.jpg) no-repeat;}
-
-</style>
-
-<div id=qh_con8 onMouseOver="mynav8.className='mynav1';mynav8.style.color='#10218b';" onMouseOut="mynav8.className='';mynav8.style.color='';" style="DISPLAY: none" class="ctop3az">
-	<div class="qh_con8x" style="padding-bottom:15px;">
-
-    	<table width="987" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td width="239" height="358" align="center" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
-      <tr>
-        <td width="56" align="right" valign="middle" class="scyhei20">&nbsp;</td>
-        <td width="283" align="left" valign="middle" class="hei20">信息公开工作信息</td>
-      </tr>
-      <tr>
-        <td>&nbsp;</td>
-        <td align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
-          <tr>
-            <td width="107" align="left" valign="top" class="lan16_28">相关规定</td>
-          </tr>
-   
-
-          <tr>
-            <td align="left" valign="top"><a href="{{domain}}/xxgkml/xxgkgzxx/xggd/glbf/" class="hui12_18h" target="_blank">信息公开管理办法</a></td>
-          </tr>
-
-          <tr>
-            <td align="left" valign="top"><a href="{{domain}}/xxgkml/xxgkgzxx/xggd/xxgkzn/" class="hui12_18h" target="_blank">信息公开指南</a></td>
-          </tr>
-
-          <tr>
-            <td align="left" valign="top"><a href="{{domain}}/xxgkml/xxgkgzxx/xggd/xxgkml/" class="hui12_18h" target="_blank">信息公开目录</a></td>
-          </tr>
-
-          <tr>
-            <td align="left" valign="top"><a href="{{domain}}/xxgkml/xxgkgzxx/xggd/qtgd/" class="hui12_18h" target="_blank">其他规定</a></td>
-          </tr>
-        
-
-
-        </table>
-          <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-top:27px">
-            <tr>
-              <td align="left" valign="top" class="lan16_28">组织机构</td>
-            </tr>
-
-          <tr>
-            <td align="left" valign="top"><a href="{{domain}}/xxgkml/xxgkgzxx/zzjg/gzjg/" class="hui12_18h" target="_blank">工作机构</a></td>
-          </tr>
-
-          <tr>
-            <td align="left" valign="top"><a href="{{domain}}/xxgkml/xxgkgzxx/zzjg/jdjg/" class="hui12_18h" target="_blank">监督机构</a></td>
-          </tr>
-
-
-          </table>
-          <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-top:30px">
-            <tr>
-              <td align="left" valign="top" class="lan16_28">年度报告</td>
-            </tr>
-
-
-            <tr>
-              <td align="left" valign="top"><a href="{{domain}}/xxgkml/xxgkgzxx/ndbg/ndbg/201803/t20180330_4640481.shtml" class="hui12_18h" target="_blank">2017年度报告</a></td>
-            </tr>
-
-            <tr>
-              <td align="left" valign="top"><a href="{{domain}}/xxgkml/xxgkgzxx/ndbg/ndbg/201703/t20170327_4595143.shtml" class="hui12_18h" target="_blank">2016年度报告</a></td>
-            </tr>
-
-            <tr>
-              <td align="left" valign="top"><a href="{{domain}}/xxgkml/xxgkgzxx/ndbg/ndbg/201603/t20160330_4551329.shtml" class="hui12_18h" target="_blank">2015年度报告</a></td>
-            </tr>
-
-            <tr>
-              <td align="left" valign="top"><a href="{{domain}}/xxgkml/xxgkgzxx/ndbg/ndbg/201503/t20150309_4318972.shtml" class="hui12_18h" target="_blank">2014年度报告</a></td>
-            </tr>
-
-            <tr>
-              <td align="left" valign="top"><a href="{{domain}}/xxgkml/xxgkgzxx/ndbg/ndbg/201404/t20140404_4086121.shtml" class="hui12_18h" target="_blank">2013年度报告</a></td>
-            </tr>
-
-            <tr>
-              <td align="left" valign="top"><a href="{{domain}}/xxgkml/xxgkgzxx/ndbg/ndbg/201303/t20130315_3793929.shtml" class="hui12_18h" target="_blank">2012年度报告</a></td>
-            </tr>
-
-
-       </table></td>
-      </tr>
-    </table></td>
-    <td width="330" align="center" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0" class="scyxxgk">
-      <tr>
-        <td width="54" align="right" valign="middle" class="scyhei201">&nbsp;</td>
-        <td colspan="2" align="left" valign="top" class="hei20">中国科学院学部</td>
-      </tr>
-      <tr>
-        <td>&nbsp;</td>
-        <td width="141" align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
-          <tr>
-            <td width="107" align="left" valign="top" class="lan16_28">基本信息</td>
-          </tr>
-
-
-          <tr>
-            <td align="left" valign="top"><a href="{{domain}}/xxgkml/zgkxyxb/jbxx/xbgk/" class="hui12_18h" target="_blank">学部概况</a></td>
-          </tr>
-
-          <tr>
-            <td align="left" valign="top"><a href="{{domain}}/xxgkml/zgkxyxb/jbxx/ysdh/" class="hui12_18h" target="_blank">院士大会</a></td>
-          </tr>
-
-          <tr>
-            <td align="left" valign="top"><a href="{{domain}}/xxgkml/zgkxyxb/jbxx/ysxx/" class="hui12_18h" target="_blank">院士信息</a></td>
-          </tr>
-
-
-
-          </table>
-          <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-top:13px">
-            <tr>
-              <td align="left" valign="top" class="lan16_28">规章制度</td>
-            </tr>
-
-
-          <tr>
-            <td align="left" valign="top"><a href="{{domain}}/xxgkml/zgkxyxb/gzzd/yszc/" class="hui12_18h" target="_blank">院士章程</a></td>
-          </tr>
-
-          <tr>
-            <td align="left" valign="top"><a href="{{domain}}/xxgkml/zgkxyxb/gzzd/zxgd/" class="hui12_18h" target="_blank">增选工作有关规定</a></td>
-          </tr>
-
-          <tr>
-            <td align="left" valign="top"><a href="{{domain}}/xxgkml/zgkxyxb/gzzd/qtgzbf/" class="hui12_18h" target="_blank">其他工作规则与管理办法</a></td>
-          </tr>
-
-
-          </table>
-          <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-top:30px">
-            <tr>
-              <td align="left" valign="top" class="lan16_28">工作进展</td>
-            </tr>
-
-
-          <tr>
-            <td align="left" valign="top"><a href="{{domain}}/xxgkml/zgkxyxb/gzjz/yszx/" class="hui12_18h" target="_blank">院士增选</a></td>
-          </tr>
-
-          <tr>
-            <td align="left" valign="top"><a href="{{domain}}/xxgkml/zgkxyxb/gzjz/zxpy/" class="hui12_18h" target="_blank">咨询评议</a></td>
-          </tr>
-
-          <tr>
-            <td align="left" valign="top"><a href="{{domain}}/xxgkml/zgkxyxb/gzjz/xskp/" class="hui12_18h" target="_blank">学术科普</a></td>
-          </tr>
-
-          <tr>
-            <td align="left" valign="top"><a href="{{domain}}/xxgkml/zgkxyxb/gzjz/gzdt/" class="hui12_18h" target="_blank">工作动态</a></td>
-          </tr>
-
-
-          </table></td>
-        <td width="135" align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
-          <tr>
-            <td align="left" valign="top" class="lan16_28">学部出版物</td>
-          </tr>
-
-
-          <tr>
-            <td align="left" valign="top"><a href="{{domain}}/xxgkml/zgkxyxb/xbcbw/zxjc/" class="hui12_18h" target="_blank">咨询决策系列</a></td>
-          </tr>
-
-          <tr>
-            <td align="left" valign="top"><a href="{{domain}}/xxgkml/zgkxyxb/xbcbw/xsyl/" class="hui12_18h" target="_blank">学术引领系列</a></td>
-          </tr>
-
-          <tr>
-            <td align="left" valign="top"><a href="{{domain}}/xxgkml/zgkxyxb/xbcbw/kxwh/" class="hui12_18h" target="_blank">科学文化系列</a></td>
-          </tr>
-
-          <tr>
-            <td align="left" valign="top"><a href="{{domain}}/xxgkml/zgkxyxb/xbcbw/qtcbw/" class="hui12_18h" target="_blank">其他出版物</a></td>
-          </tr>
-
-
-        </table>
-          <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-top:110px">
-            <tr>
-              <td align="left" valign="top" class="lan16_28">陈嘉庚科学奖</td>
-            </tr>
-
-
-          <tr>
-            <td align="left" valign="top"><a href="{{domain}}/xxgkml/zgkxyxb/cjgkxj/jggk/" class="hui12_18h" target="_blank">机构概况</a></td>
-          </tr>
-
-          <tr>
-            <td align="left" valign="top"><a href="{{domain}}/xxgkml/zgkxyxb/cjgkxj/gzzd/" class="hui12_18h" target="_blank">规章制度</a></td>
-          </tr>
-
-          <tr>
-            <td align="left" valign="top"><a href="{{domain}}/xxgkml/zgkxyxb/cjgkxj/tzgg/" class="hui12_18h" target="_blank">通知公告</a></td>
-          </tr>
-
-
-          </table></td>
-      </tr>
-    </table></td>
-    <td width="418" align="center" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0" class="scyxxgk1">
-      <tr>
-        <td width="56" align="right" valign="middle" class="scyhei202">&nbsp;</td>
-        <td colspan="3" align="left" valign="top" class="hei20">中国科学院院部</td>
-      </tr>
-      <tr>
-        <td>&nbsp;</td>
-        <td width="115" align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
-          <tr>
-            <td align="left" valign="top" class="lan16_28">机构设置</td>
-          </tr>
-
-
-          <tr>
-            <td align="left" valign="top"><a href="{{domain}}/xxgkml/zgkxyyb/jgsz/jbqk/" class="hui12_18h" target="_blank">基本情况</a></td>
-          </tr>
-
-          <tr>
-            <td align="left" valign="top"><a href="{{domain}}/xxgkml/zgkxyyb/jgsz/yldjt/" class="hui12_18h" target="_blank">院领导集体</a></td>
-          </tr>
-
-          <tr>
-            <td align="left" valign="top"><a href="{{domain}}/xxgkml/zgkxyyb/jgsz/zzjg/" class="hui12_18h" target="_blank">组织机构</a></td>
-          </tr>
-
-
-          </table>
-          <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-top:11px">
-            <tr>
-              <td align="left" valign="top" class="lan16_28">财政经费</td>
-            </tr>
-           
-
-          <tr>
-            <td align="left" valign="top"><a href="{{domain}}/xxgkml/zgkxyyb/czjf/ysjs/" class="hui12_18h" target="_blank">预算决算</a></td>
-          </tr>
-
-          <tr>
-            <td align="left" valign="top"><a href="{{domain}}/xxgkml/zgkxyyb/czjf/zdjjxm/" class="hui12_18h" target="_blank">重大基建项目</a></td>
-          </tr>
-
-          <tr>
-            <td align="left" valign="top"><a href="{{domain}}/xxgkml/zgkxyyb/czjf/zdcg/" class="hui12_18h" target="_blank">重大采购</a></td>
-          </tr>
-
-          <tr>
-            <td align="left" valign="top"><a href="{{domain}}/xxgkml/zgkxyyb/czjf/yjxm/" class="hui12_18h" target="_blank">院级项目</a></td>
-          </tr>
- 
-
-          </table>
-          <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-top:15px">
-            <tr>
-              <td align="left" valign="top" class="lan16_28">国际合作</td>
-            </tr>
-           
-
-          <tr>
-            <td align="left" valign="top"><a href="{{domain}}/xxgkml/zgkxyyb/gjhz/gjzz/" class="hui12_18h" target="_blank">国际组织</a></td>
-          </tr>
-
-          <tr>
-            <td align="left" valign="top"><a href="{{domain}}/xxgkml/zgkxyyb/gjhz/gjhy/" class="hui12_18h" target="_blank">国际会议</a></td>
-          </tr>
-
-          <tr>
-            <td align="left" valign="top"><a href="{{domain}}/xxgkml/zgkxyyb/gjhz/gjjl/" class="hui12_18h" target="_blank">国际奖励</a></td>
-          </tr>
-
-          <tr>
-            <td align="left" valign="top"><a href="{{domain}}/xxgkml/zgkxyyb/gjhz/gjjxj/" class="hui12_18h" target="_blank">国际奖学金</a></td>
-          </tr>
- 
-
-
-          </table></td>
-        <td width="111" align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
-          <tr>
-            <td align="left" valign="top" class="lan16_28">规章制度</td>
-          </tr>
-        
-
-          <tr>
-            <td align="left" valign="top"><a href="{{domain}}/xxgkml/zgkxyyb/gzzd/zkyzc/" class="hui12_18h" target="_blank">中国科学院章程</a></td>
-          </tr>
-
-          <tr>
-            <td align="left" valign="top"><a href="{{domain}}/xxgkml/zgkxyyb/gzzd/jggl/" class="hui12_18h" target="_blank">机构管理</a></td>
-          </tr>
-
-          <tr>
-            <td align="left" valign="top"><a href="{{domain}}/xxgkml/zgkxyyb/gzzd/kyhd/" class="hui12_18h" target="_blank">科研活动管理</a></td>
-          </tr>
-
-          <tr>
-            <td align="left" valign="top"><a href="{{domain}}/xxgkml/zgkxyyb/gzzd/rlzy/" class="hui12_18h" target="_blank">人力资源管理</a></td>
-          </tr>
-
-
-          </table>
-          <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-top:13px">
-            <tr>
-              <td align="left" valign="top" class="lan16_28">人事人才</td>
-            </tr>
-        
-
-          <tr>
-            <td align="left" valign="top"><a href="{{domain}}/xxgkml/zgkxyyb/rsrc/rsrm/" class="hui12_18h" target="_blank">人事任免</a></td>
-          </tr>
-
-          <tr>
-            <td align="left" valign="top"><a href="{{domain}}/xxgkml/zgkxyyb/rsrc/rczx/" class="hui12_18h" target="_blank">人才专项</a></td>
-          </tr>
-
-          <tr>
-            <td align="left" valign="top"><a href="{{domain}}/xxgkml/zgkxyyb/rsrc/rczp/" class="hui12_18h" target="_blank">人才招聘</a></td>
-          </tr>
-
-          <tr>
-            <td align="left" valign="top"><a href="{{domain}}/xxgkml/zgkxyyb/rsrc/zsypy/" class="hui12_18h" target="_blank">招生与培养</a></td>
-          </tr>
-
-
-          </table>
-          <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-top:14px">
-            <tr>
-              <td align="left" valign="top" class="lan16_28">科学传播</td>
-            </tr>
-            
-
-          <tr>
-            <td align="left" valign="top"><a href="{{domain}}/xxgkml/zgkxyyb/kxpj/kpzy/" class="hui12_18h" target="_blank">科普资源</a></td>
-          </tr>
-
-          <tr>
-            <td align="left" valign="top"><a href="{{domain}}/xxgkml/zgkxyyb/kxpj/kpzs/" class="hui12_18h" target="_blank">科普知识</a></td>
-          </tr>
-
-          <tr>
-            <td align="left" valign="top"><a href="{{domain}}/xxgkml/zgkxyyb/kxpj/wzjs/" class="hui12_18h" target="_blank">网站建设</a></td>
-          </tr>
-
-
-          </table></td>
-        <td width="136" align="left" valign="top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
-          <tr>
-            <td align="left" valign="top" class="lan16_28">发展规划</td>
-          </tr>
-            
-
-          <tr>
-            <td align="left" valign="top"><a href="{{domain}}/xxgkml/zgkxyyb/fzgh/ztgh/" class="hui12_18h" target="_blank">院总体规划</a></td>
-          </tr>
-
-          <tr>
-            <td align="left" valign="top"><a href="{{domain}}/xxgkml/zgkxyyb/fzgh/zxgh/" class="hui12_18h" target="_blank">专项规划</a></td>
-          </tr>
-
-
-        </table>
-          <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-top:13px">
-            <tr>
-              <td align="left" valign="top" class="lan16_28">科学研究</td>
-            </tr>
-            
-
-          <tr>
-            <td align="left" valign="top"><a href="{{domain}}/xxgkml/zgkxyyb/kxyj/kycxdy/" class="hui12_18h" target="_blank">科研创新单元</a></td>
-          </tr>
-
-          <tr>
-            <td align="left" valign="top"><a href="{{domain}}/xxgkml/zgkxyyb/kxyj/kyzb/" class="hui12_18h" target="_blank">科研装备</a></td>
-          </tr>
-
-          <tr>
-            <td align="left" valign="top"><a href="{{domain}}/xxgkml/zgkxyyb/kxyj/xdzx/" class="hui12_18h" target="_blank">先导专项</a></td>
-          </tr>
-
-          <tr>
-            <td align="left" valign="top"><a href="{{domain}}/xxgkml/zgkxyyb/kxyj/kyjz/" class="hui12_18h" target="_blank">科研进展</a></td>
-          </tr>
-
-          <tr>
-            <td align="left" valign="top"><a href="{{domain}}/xxgkml/zgkxyyb/kxyj/kycg/" class="hui12_18h" target="_blank">科研成果</a></td>
-          </tr>
-
-          <tr>
-            <td align="left" valign="top"><a href="{{domain}}/xxgkml/zgkxyyb/kxyj/cgzh_/" class="hui12_18h" target="_blank">成果转化</a></td>
-          </tr>
-
-          <tr>
-            <td align="left" valign="top"><a href="{{domain}}/xxgkml/zgkxyyb/kxyj/kjjl/" class="hui12_18h" target="_blank">科技奖励</a></td>
-          </tr>
-
-
-          </table>
-          <table width="100%" border="0" cellspacing="0" cellpadding="0" style="margin-top:13px">
-            <tr>
-              <td align="left" valign="top" class="lan16_28">年度统计与出版物</td>
-            </tr>
-            
-
-          <tr>
-            <td align="left" valign="top"><a href="{{domain}}/xxgkml/zgkxyyb/tjcbw/ndtj/" class="hui12_18h" target="_blank">年度统计</a></td>
-          </tr>
-
-          <tr>
-            <td align="left" valign="top"><a href="{{domain}}/xxgkml/zgkxyyb/tjcbw/cbw/" class="hui12_18h" target="_blank">出版物</a></td>
-          </tr>
-
-
-
-          </table></td>
-      </tr>
-    </table></td>
-  </tr>
-</table>
-
-
-
-    </div>
-</div>
-<div id=qh_con9 onMouseOver="mynav9.className='mynav9';mynav9.style.color='#10218b';" onMouseOut="mynav9.className='';mynav9.style.color='';" style="DISPLAY: none" class="ctop3az">
-	<div class="qh_con9x">
-    	<div class="qh_con9xa">
-        	<div class="qh_con9xa1">
-        <dl>
-        	<dt>年度专题</dt>
-            <dd><a href="{{domain}}/zt/2018nzt/" class="now" id="two1" onMouseOver="setTab('two',1,6);">2018</a></dd>
-            <dd><a href="{{domain}}/zt/2017nzt/" id="two2" onMouseOver="setTab('two',2,6);">2017</a></dd>
-            <dd><a href="{{domain}}/zt/2016nzt/" id="two3" onMouseOver="setTab('two',3,6);">2016</a></dd>
-            <dd><a href="{{domain}}/zt/2015nzt/" id="two4" onMouseOver="setTab('two',4,6);">2015</a></dd>
-            <dd><a href="{{domain}}/zt/2014nzt/" id="two5" onMouseOver="setTab('two',5,6);">2014</a></dd>
-            <dd><a href="{{domain}}/zt/2013nzt/" id="two6" onMouseOver="setTab('two',6,6);">2013</a></dd>
-        </dl>
-        <span><a href="{{domain}}/zt1/">更多</a></span>
-    </div>
-    <div class="qh_con9xa2">
-        <div id="two_con1">
-        	<div class="qh_con9xa2x">
-            	<ul>
-                {% for i in random.sample(newst,8) %}
-                	<li style="height:38px;">
-                    	<a href="{{domain}}{{i['url'][1:]}}" target="_blank"><img src="{{i['img']}}" width="139" height="38" /></a>
-                    </li>
-                {% end %}
-          		</ul>
-            </div>
-        </div>
-        
-        <div id="two_con2" style="display:none;">
-        	<div class="qh_con9xa2x">
-            	<ul>
-                
-                {% for i in random.sample(newst,11) %}
-                	<li style="height:38px;">
-                    	<a href="{{domain}}{{i['url'][1:]}}" target="_blank"><img src="{{i['img']}}" width="139" height="38" /></a>
-                    </li>
-                {% end %}
-          	</ul>
-            </div>
-        </div>
-        
-        <div id="two_con3" style="display:none;">
-        	<div class="qh_con9xa2x">
-            	<ul>
-                
-                {% for i in random.sample(newst,15) %}
-                	<li style="height:38px;">
-                    	<a href="{{domain}}{{i['url'][1:]}}" target="_blank"><img src="{{i['img']}}" width="139" height="38" /></a>
-                    </li>
-                {% end %}
-                
-          	</ul>
-            </div>
-        </div>
-
-        <div id="two_con4" style="display:none;">
-        	<div class="qh_con9xa2x">
-            	<ul>
-                {% for i in random.sample(newst,15) %}
-                	<li style="height:38px;">
-                    	<a href="{{domain}}{{i['url'][1:]}}" target="_blank">
-                        	<img src="{{i['img']}}" width="139" height="38" />
-                        </a>
-                    </li>
-                {% end %}
-          		</ul>
-            </div>
-        </div>
-        <div id="two_con5" style="display:none;">
-        	<div class="qh_con9xa2x">
-            	<ul>
-                
-                {% for i in random.sample(newst,15) %}
-                	<li style="height:38px;">
-                    	<a href="{{domain}}{{i['url'][1:]}}" target="_blank">
-                        	<img src="{{i['img']}}" width="139" height="38" />
-                        </a>
-                    </li>
-                {% end %}
-
-          		</ul>
-            </div>
-
-        </div>
-        <div id="two_con6" style="display:none;">
-        	<div class="qh_con9xa2x">
-            	<ul>
-                
-                {% for i in random.sample(newst,20) %}
-                	<li style="height:38px;">
-                    	<a href="{{domain}}{{i['url'][1:]}}" target="_blank">
-                        	<img src="{{i['img']}}" width="139" height="38" />
-                        </a>
-                    </li>
-                {% end %}
-
-          		</ul>
-            </div>
-        </div>
-    </div>
-        </div>
-        <div class="qh_con9xb">
-        	<ul>
-                    <li class="qh_con9xbli1"><a href="{{domain}}/zt/kjzt/" >科技专题</a></li>
-                    <li class="qh_con9xbli2"><a href="{{domain}}/zt/sszt/" >时事专题</a></li>
-                    <li class="qh_con9xbli3"><a href="{{domain}}/zt/rwzt/" >人物专题</a></li>
-                    <li class="qh_con9xbli4"><a href="{{domain}}/zt/hyzt/" >会议专题</a></li>
-          	</ul>
-        </div>
-    </div>
-</div>
-        </div>
-    </div>
-    
-    <div class="cztxxa">
-    	<ul>
-        	<li class="cztxxalix"><a href="{{domain}}/" class="CurrChnlCls">首页</a>&nbsp;>&nbsp;<a href="../../" class="CurrChnlCls">科学普及</a>&nbsp;>&nbsp;<a href="../" class="CurrChnlCls">科普文章</a></li>
-        </ul>
-    </div>
-
-<style type="text/css">
-.cztxxb1 img{padding:0;}
-</style>
-
-
-
-    <div class="cztxxb">
-    	<div class="cztxxb1">
-
-        	<div class="cztxxb1y">
-            <h3 style="padding-top:14px">{{data['title']}}</h3>
-            <h4 id="cztxxb1yh4"  style="display:none"></h4>
-            </div>
-            <div class="cztxxb1z">
-<!--分享-->
-<div class="bshare-custom" style="background:#fff;width:90px;border:1px solid #e5e5e5;padding:6px 0 6px 4px;position:absolute;top:12px;left:580px;">
-   <span style="color:#077fd3; cursor:pointer;background:url({{domain}}/ch_ld_xl_xxtu_03_2014.png) no-repeat right;" title="分享到" href="http://www.bshare.cn/share" id="bshare-shareto" class="">我要分享 &nbsp;</span><br />
-
-	<div id="ld_fxhide" style="display:none;padding-top:10px;">
-   <a style="margin-bottom:8px;color:#595959;font-weight:bold;" title="分享到新浪微博" class="bshare-sinaminiblog">新浪微博</a><br />
-   <a style="margin-bottom:8px;color:#595959;font-weight:bold;" title="分享到微信" class="bshare-weixin">微信</a><br />
-   <a style="margin-bottom:8px;color:#595959;font-weight:bold;" title="分享到QQ好友" class="bshare-qqim">QQ好友</a><br />
-   <a style="margin-bottom:8px;color:#595959;font-weight:bold;" title="分享到人人" class="bshare-renren">人人网</a><br />
-   
-   <!-- 在这里添加更多平台 -->
-   <!--<a title="更多平台" id="bshare-more-icon" class="bshare-more">更多...</a>-->
-   </div>
-</div>
-<script>
-	$(function(){
-		$("#bshare-shareto").mouseover(function(){
-			$("#ld_fxhide").slideDown();
-			});
-		});
-	$(function(){
-		$(".bshare-custom").mouseleave(function(){
-			$("#ld_fxhide").slideUp();
-			});
-
-			});
-
-        
-</script>
-<script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#uuid=<你的UUID>&style=-1"></script>
-<script type="text/javascript" charset="utf-8" src="{{domain}}/bshareC1.js"></script> 
-
-
-<script type="text/javascript">
-$(function(){
-		 var source = '{{data['shit']}} {{data['keyword']}}';
-	     if (source == '')
-           {
-	document.getElementById("source").style.display = "none";
-		  }
-                });
-	</script>
-
-
-
-<!--分享-->
-            	<p><span id="source">文章来源：<span>{{data['shit']}}</span>&nbsp;&nbsp;&nbsp;&nbsp;</span>发布时间：<span>{{data['date']}}</span>&nbsp;&nbsp;<span>【字号：&nbsp;<a style="color:#077fd3;" href="javascript:ztdxa(12);">小</a>&nbsp;&nbsp;<a style="color:#077fd3;" href="javascript:ztdxa(14);">中</a>&nbsp;&nbsp;<a style="color:#077fd3;" href="javascript:ztdxa(16);">大</a>&nbsp;】</span></p>
-            </div>
-            <div id="cztxxb1x" class="cztxxb1x" style="margin-top:15px;">
-            <style type="text/css">.TRS_Editor P{margin-top:0px;margin-bottom:12px;line-height:1.8;font-family:宋体;font-size:10.5pt;}.TRS_Editor DIV{margin-top:0px;margin-bottom:12px;line-height:1.8;font-family:宋体;font-size:10.5pt;}.TRS_Editor TD{margin-top:0px;margin-bottom:12px;line-height:1.8;font-family:宋体;font-size:10.5pt;}.TRS_Editor TH{margin-top:0px;margin-bottom:12px;line-height:1.8;font-family:宋体;font-size:10.5pt;}.TRS_Editor SPAN{margin-top:0px;margin-bottom:12px;line-height:1.8;font-family:宋体;font-size:10.5pt;}.TRS_Editor FONT{margin-top:0px;margin-bottom:12px;line-height:1.8;font-family:宋体;font-size:10.5pt;}.TRS_Editor UL{margin-top:0px;margin-bottom:12px;line-height:1.8;font-family:宋体;font-size:10.5pt;}.TRS_Editor LI{margin-top:0px;margin-bottom:12px;line-height:1.8;font-family:宋体;font-size:10.5pt;}.TRS_Editor A{margin-top:0px;margin-bottom:12px;line-height:1.8;font-family:宋体;font-size:10.5pt;}</style><div class=TRS_Editor><style type="text/css">
-
-.TRS_Editor P{margin-top:0px;margin-bottom:12px;line-height:1.8;font-family:宋体;font-size:10.5pt;}.TRS_Editor DIV{margin-top:0px;margin-bottom:12px;line-height:1.8;font-family:宋体;font-size:10.5pt;}.TRS_Editor TD{margin-top:0px;margin-bottom:12px;line-height:1.8;font-family:宋体;font-size:10.5pt;}.TRS_Editor TH{margin-top:0px;margin-bottom:12px;line-height:1.8;font-family:宋体;font-size:10.5pt;}.TRS_Editor SPAN{margin-top:0px;margin-bottom:12px;line-height:1.8;font-family:宋体;font-size:10.5pt;}.TRS_Editor FONT{margin-top:0px;margin-bottom:12px;line-height:1.8;font-family:宋体;font-size:10.5pt;}.TRS_Editor UL{margin-top:0px;margin-bottom:12px;line-height:1.8;font-family:宋体;font-size:10.5pt;}.TRS_Editor LI{margin-top:0px;margin-bottom:12px;line-height:1.8;font-family:宋体;font-size:10.5pt;}.TRS_Editor A{margin-top:0px;margin-bottom:12px;line-height:1.8;font-family:宋体;font-size:10.5pt;}</style><div>
-{% for i in data['content'] %}
-    <p>{{i}}</p>
-{% end %}
-
-</div></div>
-			<br /><br /><br />
-            <div style="float:right">
-            <span style="text-align:right; color:#999; padding-right:25px;">（责任编辑：{{data['keyword']}}）</span></div>
-<div style="margin:0 0 20px 15px;" class="scyxlfj">
-<h3 id="scy_xlfj" style="margin-bottom:10px; font-size:16px; font-family:"微软雅黑";">附件：</h3>
-<ul>
-
-</ul>
-</div>
-
-             </div>
-
-
-    
-        </div>
-        <div class="cztxxb2">
-<style type="text/css">
-
-.TRS_Editor P{margin-top:0px;margin-bottom:12px;line-height:1.8;font-size:10.5pt;}.TRS_Editor DIV{margin-top:0px;margin-bottom:12px;line-height:1.8;font-size:10.5pt;}.TRS_Editor TD{margin-top:0px;margin-bottom:12px;line-height:1.8;font-size:10.5pt;}.TRS_Editor TH{margin-top:0px;margin-bottom:12px;line-height:1.8;font-size:10.5pt;}.TRS_Editor SPAN{margin-top:0px;margin-bottom:12px;line-height:1.8;font-size:10.5pt;}.TRS_Editor FONT{margin-top:0px;margin-bottom:12px;line-height:1.8;font-size:10.5pt;}.TRS_Editor UL{margin-top:0px;margin-bottom:12px;line-height:1.8;font-size:10.5pt;}.TRS_Editor LI{margin-top:0px;margin-bottom:12px;line-height:1.8;font-size:10.5pt;}.TRS_Editor A{margin-top:0px;margin-bottom:12px;line-height:1.8;font-size:10.5pt; color:#36F}</style>     	 
-
-<div class="cztxxb2a">
-           	<h2>热点新闻</h2>
-
-
-              <ul>
                 {% for i in random.sample(newst,5) %}
-                  <li class="cztxxb2ali1"><a href="{{domain}}{{i['url'][1:]}}"  target="_blank" style="font-size:16px; color:#bb0404; font-weight:bold;" title="{{i['title']}}" >{{i['title']}}</a></li>
-                {% end %}                
-                 
-              </ul>
-
-              <dl>
-             {% for i in random.sample(newst,5) %}
                 <dd><a href="{{domain}}{{i['url'][1:]}}" target="_blank" title="{{i['title']}}">{{i['title']}}</a></dd>
-             {% end %}
-              </dl>
+                {% end %}
+            </dl>
 
-            </div>
-            <div class="cztxxb2b">
-
-
-           	  <h2>新闻推荐</h2>
-              {% for i in random.sample(newst,5) %}
-               <ul>
-               	  <li class="cztxxb2bli1"><img src="{{data['img']}}" width="114" height="78" /><span><a href="{{data['url']}}" target="_blank"><img src="{{i['img']}}" width="114" height="78" /></a></span></li>
-                  <li class="cztxxb2bli2"><a href="{{domain}}{{i['url'][1:]}}" target="_blank" title="【新闻联播】“{{i['title']}}">【新闻联播】{{i['title']}}</a></li>
-              </ul>
-              {% end %}
-            
-
-            </div>
-          <div class="cztxxb2c">
-
-           	<h2>专题推荐</h2>
-
-              <ul>
-              {% for i in random.sample(newst,5) %}
-                <li><a href="{{domain}}{{i['url'][1:]}}" target="_blank"><img src="{{i['img']}}" width="263" height="70" /></a></li>
-              {% end %}
-              </ul>
-
-            </div>
+        </div>
+        <div class="cztxxb2b">
 
 
+            <h2>新闻推荐</h2>
+            {% for i in random.sample(newst,5) %}
+            <ul>
+                <li class="cztxxb2bli1"><img src="{{data['img']}}" width="114" height="78"/><span><a
+                        href="{{data['url']}}" target="_blank"><img src="{{i['img']}}" width="114"
+                                                                    height="78"/></a></span></li>
+                <li class="cztxxb2bli2"><a href="{{domain}}{{i['url'][1:]}}" target="_blank"
+                                           title="【新闻联播】“{{i['title']}}">【新闻联播】{{i['title']}}</a></li>
+            </ul>
+            {% end %}
 
-<script>
-	$(function(){
-		if( $(".xgxwscy dd").length<=0){
-			$("#scy_xgxw").css("display","none");
-			
-			}
-                if( $(".scyxlfj li").length<=0){
-		  $("div.scyxlfj").hide();
-		}
-		});
-</script>
-            <div class="cztxxb2d" id="scy_xgxw">
-            	<h2>相关新闻</h2>
-              <div class="xgxwscy">
+
+        </div>
+        <div class="cztxxb2c">
+
+            <h2>专题推荐</h2>
+
+            <ul>
+                {% for i in random.sample(newst,5) %}
+                <li><a href="{{domain}}{{i['url'][1:]}}" target="_blank"><img src="{{i['img']}}" width="263"
+                                                                              height="70"/></a></li>
+                {% end %}
+            </ul>
+
+        </div>
+
+
+        <script>
+            $(function () {
+                if ($(".xgxwscy dd").length <= 0) {
+                    $("#scy_xgxw").css("display", "none");
+
+                }
+                if ($(".scyxlfj li").length <= 0) {
+                    $("div.scyxlfj").hide();
+                }
+            });
+        </script>
+        <div class="cztxxb2d" id="scy_xgxw">
+            <h2>相关新闻</h2>
+            <div class="xgxwscy">
                 <dl>
-            
+
                 </dl>
-             </div>
             </div>
-        </div><br class="clear"  />
+        </div>
     </div>
-    
+    <br class="clear"/>
+</div>
+
 <div class="cfoot">
-    	<div class="cfoota" style="height:22px;">
-        	<div class="cfootax">
-         </div>
-        </div>
-        <div class="cfootb" style="height:auto;">
-
-
-
-
-<div>
-
-
-<style type="text/css">     
-.scyyqlj select{ width:120px;} 
-.scyyqlj td{ width:125px;}
-.scyyqlj{margin:0 auto; width:1000px; height:44px; margin-top:6px;} 
-</style>
-
-</div>
-
-
-
-<div style="margin:0 auto; text-align:center; width:280px;">
-  <ul>
-    <li style="float:left; padding-top:20px;"><script id="_jiucuo_" sitecode='bm48000002' src='{{domain}}/jiucuo.js'></script></li>
-    <li style="padding-top:10px;"><script type="text/javascript">document.write(unescape("%3Cspan id='_ideConac' %3E%3C/span%3E%3Cscript src='http://dcs.conac.cn/js/33/000/0000/40672376/CA330000000406723760002.js' type='text/javascript'%3E%3C/script%3E"));</script></li>
-  </ul>
-</div>
-<script>
-var _hmt = _hmt || [];
-(function() {
-      var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?29f208cb642435f0f756fe5457099711";
-          var s = document.getElementsByTagName("script")[0]; 
-            s.parentNode.insertBefore(hm, s);
-})();
-</script>
-
-        	<div class="cfootbx" style="background:none;">
-                <p class="cfootbxp1">&copy; 1996 - <script>document.write((new Date()).getFullYear());</script> 中国科学院 版权所有 京ICP备05002857号&nbsp;&nbsp;京公网安备110402500047号&nbsp;&nbsp;<!--<a href="https://ss.knet.cn/verifyseal.dll?sn=a12103011010036696000000" target="_blank">可信网站身份验证</a>&nbsp;&nbsp;--><a href="{{domain}}/lx/201410/t20141017_4226181.shtml" target="_blank" >联系我们</a></p>
-                <p class="cfootbxp2">地址：北京市三里河路52号 邮编：100864</p>
-                <p> <a href="{{domain}}/sitemap.xml">sitemap</a></p>
-          </div>
+    <div class="cfoota" style="height:22px;">
+        <div class="cfootax">
         </div>
     </div>
+    <div class="cfootb" style="height:auto;">
+
+
+        <div>
+
+
+            <style type="text/css">
+                .scyyqlj select {
+                    width: 120px;
+                }
+
+                .scyyqlj td {
+                    width: 125px;
+                }
+
+                .scyyqlj {
+                    margin: 0 auto;
+                    width: 1000px;
+                    height: 44px;
+                    margin-top: 6px;
+                }
+            </style>
+
+        </div>
+
+
+        <div style="margin:0 auto; text-align:center; width:280px;">
+            <ul>
+                <li style="float:left; padding-top:20px;">
+                    <script id="_jiucuo_" sitecode='bm48000002' src='{{domain}}/jiucuo.js'></script>
+                </li>
+                <li style="padding-top:10px;">
+                    <script type="text/javascript">document.write(unescape("%3Cspan id='_ideConac' %3E%3C/span%3E%3Cscript src='http://dcs.conac.cn/js/33/000/0000/40672376/CA330000000406723760002.js' type='text/javascript'%3E%3C/script%3E"));</script>
+                </li>
+            </ul>
+        </div>
+        <script>
+            var _hmt = _hmt || [];
+            (function () {
+                var hm = document.createElement("script");
+                hm.src = "https://hm.baidu.com/hm.js?29f208cb642435f0f756fe5457099711";
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(hm, s);
+            })();
+        </script>
+
+        <div class="cfootbx" style="background:none;">
+            <p class="cfootbxp1">&copy; 1996 -
+                <script>document.write((new Date()).getFullYear());</script>
+                中国科学院 版权所有 京ICP备05002857号&nbsp;&nbsp;京公网安备110402500047号&nbsp;&nbsp;
+                <!--<a href="https://ss.knet.cn/verifyseal.dll?sn=a12103011010036696000000" target="_blank">可信网站身份验证</a>&nbsp;&nbsp;--><a
+                        href="{{domain}}/lx/201410/t20141017_4226181.shtml" target="_blank">联系我们</a></p>
+            <p class="cfootbxp2">地址：北京市三里河路52号 邮编：100864</p>
+            <p><a href="{{domain}}/sitemap.xml">sitemap</a></p>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>

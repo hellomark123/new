@@ -23,30 +23,30 @@
             <div class="main_left">
                 <div class="content">
                     <h1 class="title">${menus.keyword}-${menus.titles}</h1>
-                    <div class="info">作者：${menus.keyword} &nbsp; 浏览次数：${fn.random()} 次 &nbsp; 发布时间：${menus.date} &nbsp;  <a href="javascript:window.print();">打印本文</a></div>
+                    <div class="info">作者：${menus.keyword} &nbsp; 浏览次数：${tool.getRandomNum()} 次 &nbsp; 发布时间：${menus.date} &nbsp;  <a href="javascript:window.print();">打印本文</a></div>
                     <div class="text">
                         <div id="text_left_ad">
 
                         </div>
- @for(men in menus.content){
+ <%for(men in menus.content){ %>
                         <p>&nbsp; &nbsp;${men}</p>
-                        @}
+                        <% } %>
             </div>
                 </div>
                 <div class="related">
                     <div class="headline">推荐阅读</div>
-                    @for(mens in menusList){
+                    <%for(mens in menusList){%>
                     <div class="title"><a href="${mens.url}">${mens.titles}</a></div><div class="summary">${mens.content[0]}...</div>
-                    @}
+                    <% } %>
                     </div>
             </div>
             <div class="main_right">
                 <div class="block">
                     <div class="headline">热点话题</div>
                     <div class="list">
-                    {% for i in random.sample(newst,8) %}
+                    <% for (i in random.sample(newst,8)){ %>
                     <a href="{{domain}}{{i['url'][1:]}}">{{i['title']}}</a>
-                    {% end %}
+                    <% } %>
                     </div>                    <div class="clearfix"></div>
                     </div>
                 </div>

@@ -34,17 +34,17 @@ public class BeetlProperties {
 
     public Properties getProperties(){
         Properties properties = new Properties();
-        if(ToolUtil.isNotEmpty(delimiterStatementStart)){
-            if(delimiterStatementStart.startsWith("\\")){
-                delimiterStatementStart = delimiterStatementStart.substring(1);
-            }
-            properties.setProperty("DELIMITER_STATEMENT_START",delimiterStatementStart);
-        }
-        if(ToolUtil.isNotEmpty(delimiterStatementEnd)){
-            properties.setProperty("DELIMITER_STATEMENT_END",delimiterStatementEnd);
-        }else{
-            properties.setProperty("DELIMITER_STATEMENT_END","null");
-        }
+//        if(ToolUtil.isNotEmpty(delimiterStatementStart)){
+//            if(delimiterStatementStart.startsWith("\\")){
+//                delimiterStatementStart = delimiterStatementStart.substring(1);
+//            }
+//            properties.setProperty("DELIMITER_STATEMENT_START",delimiterStatementStart);
+//        }
+//        if(ToolUtil.isNotEmpty(delimiterStatementEnd)){
+//            properties.setProperty("DELIMITER_STATEMENT_END",delimiterStatementEnd);
+//        }else{
+//            properties.setProperty("DELIMITER_STATEMENT_END","null");
+//        }
         if(ToolUtil.isNotEmpty(resourceTagroot)){
             properties.setProperty("RESOURCE.tagRoot",resourceTagroot);
         }
